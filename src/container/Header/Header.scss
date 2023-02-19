@@ -11,7 +11,6 @@ padding: 40px 0px 0px 0px;
 width: fit-content;
 margin: auto;
 li {
-
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 400;
@@ -20,12 +19,12 @@ line-height: 20px;
 letter-spacing: 0.0012em;
 a {
   padding: 0px 8px;
-  border-bottom: 1px solid #BD00FF;
+  border-bottom: 3px solid #BD00FF;
   transition: all ease .3s;
   color: #fff;
   &:hover {
-    color: #B4B3FF;
-    border-bottom: 1px solid #0500FF;
+    font-weight: 700;
+    border-bottom: 3px solid #0500FF;
   }
 }
 }

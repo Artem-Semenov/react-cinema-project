@@ -20,11 +20,11 @@
 }
 .header__body li a {
   padding: 0px 8px;
-  border-bottom: 1px solid #BD00FF;
+  border-bottom: 3px solid #BD00FF;
   transition: all ease 0.3s;
   color: #fff;
 }
 .header__body li a:hover {
-  color: #B4B3FF;
-  border-bottom: 1px solid #0500FF;
+  font-weight: 700;
+  border-bottom: 3px solid #0500FF;
 }/*# sourceMappingURL=Header.css.map */

@@ -9,9 +9,6 @@ const Header = (props: Props) => {
         <nav className="header__wrapper">
           <ul className="header__body">
             <li>
-              <a href="#">Головна</a>
-            </li>
-            <li>
               <a href="#">Розклад</a>
             </li>
             <li>

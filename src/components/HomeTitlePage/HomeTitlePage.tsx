@@ -1,14 +1,20 @@
-import Container from "components/Container/Container"
-import './HomeTitlePage.css'
-type Props = {}
+import Container from "components/Container/Container";
+import Locomotive from "components/Locomotive/Locomotive";
+import "./HomeTitlePage.css";
+type Props = {};
 const HomeTitlePage = (props: Props) => {
   return (
-
-    <div className="bg-wrapper">
-      <Container>
-        <div className="title__body"></div>
-      </Container>
-    </div>
-  )
-}
-export default HomeTitlePage
+    <>
+      <div className="bg-wrapper">
+        <Container mh100vh={true}>
+          <h1 className="title__body">
+            <div>CINEPLEX</div>
+            <div>5th ELEMENT</div>
+          </h1>
+        </Container>
+      </div>
+      <Locomotive />
+    </>
+  );
+};
+export default HomeTitlePage;

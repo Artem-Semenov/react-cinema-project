@@ -1,4 +1,30 @@
 .bg-wrapper {
-  min-height: 80vh;
-  background: rgba(0, 0, 0, 0.3) url(/public/images/Home/Main-page-bg.svg) center;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.3) url(/public/images/Home/Main-page-bg.png) center no-repeat;
+  background-size: cover;
+  overflow: hidden auto;
+}
+
+.title__body {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 130px;
+  line-height: 156px;
+  letter-spacing: 0.1em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.title__body :first-child, .title__body :last-child {
+  background: linear-gradient(180deg, #807EFC 21.88%, #0E0BAF 58.15%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.title__body :last-child {
+  font-size: 110px;
+  text-align: right;
 }/*# sourceMappingURL=HomeTitlePage.css.map */
