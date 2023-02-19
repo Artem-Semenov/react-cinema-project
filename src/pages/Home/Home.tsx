@@ -5,13 +5,21 @@ import homePageSchedule from "utils/homePageSchedule";
 
 type Props = {}
 
+type Itemprops = {
+  id: number
+  img: string
+  timeArr: Array<string>
+  title: string
+}
+
+
 type ScheduleProps =  {
   shouldRenderTitle?: boolean;
   shouldRenderDate?: boolean;
   title?: string;
   dateFrom: string;
   dateTo: string;
-  items: Array<object>;
+  items: Array<Itemprops>;
 };
 const scheduleProps : ScheduleProps = {
   shouldRenderTitle: true,

@@ -1,7 +1,16 @@
-type Props = {}
-const ScheduleListItem = (props: Props) => {
+type Itemprops = {
+  id: number
+  img: string
+  timeArr: Array<string>
+  title: string
+}
+
+
+
+
+const ScheduleListItem = ({id, img, timeArr, title} : Itemprops) => {
   return (
-    <div>ScheduleListItem</div>
+    <div>{id} {img} {timeArr} {title}</div>
   )
 }
 export default ScheduleListItem
