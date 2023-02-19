@@ -1,0 +1,35 @@
+.why-us-list-item__wrapper {
+  padding: 24px 16px 16px 16px;
+  flex-basis: 23%;
+  border: 1px solid #D9D9D9;
+.body {
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  color: #FFFFFF;
+  letter-spacing: 0.0012em;
+  text-align: center;
+  .img {
+width: 70px;
+height: 70px;
+//  background: url(assets/WhyUsIcons/Vector-1.svg) center no-repeat;
+ margin-bottom: 16px;
+margin-left: auto;
+margin-right: auto;
+  }
+  h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 8px;
+  }
+  p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+
+  }
+
+}
+}

@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: absolute;
   width: 100%;
 }
 .header__wrapper {
@@ -10,6 +10,8 @@ display: flex;
 padding: 40px 0px 0px 0px;
 width: fit-content;
 margin: auto;
+transition: all ease .3s .3s;
+
 li {
 font-family: 'Montserrat';
 font-style: normal;

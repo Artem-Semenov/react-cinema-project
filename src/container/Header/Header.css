@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: absolute;
   width: 100%;
 }
 
@@ -9,6 +9,7 @@
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
+  transition: all ease 0.3s 0.3s;
 }
 .header__body li {
   font-family: "Montserrat";
