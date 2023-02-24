@@ -1,5 +1,6 @@
 import HomeTitlePage from "components/HomeTitlePage/HomeTitlePage"
 import Schedule from "components/Schedule/Schedule"
+import WhereWeLocated from "components/WhereWeLocated/WhereWeLocated";
 import WhyUs from "components/WhyUs/WhyUs"
 import homePageSchedule from "utils/homePageSchedule";
 
@@ -35,6 +36,7 @@ const Home = (props: Props) => {
     <HomeTitlePage/>
     <WhyUs/>
     <Schedule props = {scheduleProps}/>
+    <WhereWeLocated/>
     </>
   )
 }

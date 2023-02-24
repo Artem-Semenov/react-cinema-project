@@ -1,0 +1,25 @@
+.schedule-list__item__wrapper {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  color: #fff;
+  padding: 0 12px;
+  width: 25%;
+}
+.schedule-list__item__wrapper h2 {
+  text-align: center;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  letter-spacing: 0.0012em;
+}
+.schedule-list__item__wrapper .time__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.schedule-list__item_content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}/*# sourceMappingURL=ScheduleListItem.css.map */

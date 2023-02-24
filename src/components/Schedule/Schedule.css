@@ -3,10 +3,10 @@
   flex-wrap: wrap;
   margin: 0 -24px;
   row-gap: 24px;
-  
 }
+
 .schedule__title {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-size: 40px;
   line-height: 49px;
   margin-bottom: 8px;
@@ -15,10 +15,10 @@
 }
 
 .schedule__date {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 40px;
   letter-spacing: 0.1em;
   color: #FFFFFF;
-}
+}/*# sourceMappingURL=Schedule.css.map */

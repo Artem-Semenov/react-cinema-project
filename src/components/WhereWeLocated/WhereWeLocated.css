@@ -1,0 +1,58 @@
+.where-we-located__body {
+  padding-top: 40px;
+}
+.where-we-located__body .where-we-located__title {
+  text-align: center;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  margin-bottom: 40px;
+}
+.where-we-located__body .where-we-located__content {
+  display: flex;
+  margin: 0 -12px;
+}
+.where-we-located__body .where-we-located__content p {
+  margin-top: 8px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.0012em;
+  color: #FFFFFF;
+}
+.where-we-located__body .where-we-located__content .map_block {
+  padding: 0 12px;
+  flex-basis: 50%;
+}
+.where-we-located__body .where-we-located__content .map_block .map {
+  height: 100%;
+}
+.where-we-located__body .where-we-located__content .photo_block {
+  padding: 0 12px;
+  flex-basis: 50%;
+}
+.where-we-located__body .tel__text {
+  text-align: center;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 16px;
+  text-align: center;
+  letter-spacing: 0.0012em;
+}
+.where-we-located__body .tel__text a {
+  color: #FFFFFF;
+}
+.where-we-located__body .tel__text a:hover {
+  color: blue;
+}/*# sourceMappingURL=WhereWeLocated.css.map */
