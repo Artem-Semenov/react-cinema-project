@@ -5,7 +5,6 @@ interface MapProps {
   apiKey: string;
 }
 
-
 declare global {
   interface Window {
     google: any;
@@ -19,15 +18,24 @@ const Map: React.FC<MapProps> = ({ apiKey }) => {
       version: "weekly",
     });
 
+    const positionMarker : {lat: number, lng: number} = { lat: 48.60857344640066, lng: 22.26732058286141 };
+
     loader.load().then(() => {
       const map = new window.google.maps.Map(document.getElementById("map"), {
-        center: { lat: 37.7749, lng: -122.4194 },
-        zoom: 8,
+        center: positionMarker,
+        zoom: 15,
+      });
+
+      // Add a marker to the map
+      const marker = new window.google.maps.Marker({
+        position: positionMarker, 
+        map,
+        title: "5th Element",
       });
     });
   }, [apiKey]);
 
-  return <div id="map" style={{ height: "400px" }} />;
+  return <div id="map" style={{ height: "100%" }} />;
 };
 
 export default Map;

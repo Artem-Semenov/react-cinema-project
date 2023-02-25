@@ -7,11 +7,10 @@ const Locomotive = (props: Props) => {
       <div className="locomotive__body">
         <div className="locomotive__body_bg"></div>
         <div className="locomotive__content">
-          <div className="locomotive__item">Працюємо з генератором!</div>
-          <div className="locomotive__item">Кино без перерв!</div>
-          <div className="locomotive__item">Працюємо з генератором!</div>
-          <div className="locomotive__item">Кино без перерв!</div>
-          <div className="locomotive__item">Працюємо з генератором!</div>
+          <div className="locomotive__item"> <span className="mr-20">Працюємо з генератором!</span> Кино без перерв!</div>
+          <div className="locomotive__item"> <span className="mr-20">Працюємо з генератором!</span> Кино без перерв!</div>
+          <div className="locomotive__item"> <span className="mr-20">Працюємо з генератором!</span> Кино без перерв!</div>
+          <div className="locomotive__item"> <span className="mr-20">Працюємо з генератором!</span> Кино без перерв!</div>
           </div>
       </div>
     </div>

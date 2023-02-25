@@ -41,4 +41,9 @@
   line-height: 29px;
   letter-spacing: 0.0012em;
   color: #FFFFFF;
+  white-space: nowrap;
+}
+
+.mr-20 {
+  margin-right: 20px;
 }/*# sourceMappingURL=Locomotive.css.map */
