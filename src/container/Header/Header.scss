@@ -19,11 +19,13 @@ font-weight: 400;
 font-size: 16px;
 line-height: 20px;
 letter-spacing: 0.0012em;
-a {
+button {
+  cursor: pointer;
   padding: 0px 8px;
   border-bottom: 3px solid #BD00FF;
   transition: all ease .3s;
   color: #fff;
+  background: transparent;
   &:hover {
     font-weight: 700;
     border-bottom: 3px solid #0500FF;

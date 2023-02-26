@@ -19,13 +19,15 @@
   line-height: 20px;
   letter-spacing: 0.0012em;
 }
-.header__body li a {
+.header__body li button {
+  cursor: pointer;
   padding: 0px 8px;
   border-bottom: 3px solid #BD00FF;
   transition: all ease 0.3s;
   color: #fff;
+  background: transparent;
 }
-.header__body li a:hover {
+.header__body li button:hover {
   font-weight: 700;
   border-bottom: 3px solid #0500FF;
 }/*# sourceMappingURL=Header.css.map */

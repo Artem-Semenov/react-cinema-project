@@ -10,10 +10,11 @@
   display: flex;
   padding: 40px 0;
 }
-.footer__content a {
+.footer__content a, .footer__content button {
   color: #fff;
+  background: transparent;
 }
-.footer__content a:hover {
+.footer__content a:hover, .footer__content button:hover {
   color: #EBB3FF;
 }
 .footer__content .logo {
@@ -53,7 +54,8 @@
   display: flex;
   gap: 24px;
 }
-.footer__content .footer__socials a {
+.footer__content .footer__socials button {
+  background: transparent;
   display: block;
   width: 24px;
   height: 24px;

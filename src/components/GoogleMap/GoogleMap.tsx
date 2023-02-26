@@ -27,7 +27,7 @@ const Map: React.FC<MapProps> = ({ apiKey }) => {
       });
 
       // Add a marker to the map
-      const marker = new window.google.maps.Marker({
+       new window.google.maps.Marker({
         position: positionMarker, 
         map,
         title: "5th Element",

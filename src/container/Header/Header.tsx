@@ -1,7 +1,6 @@
 import Container from "components/Container/Container";
 import "./Header.css";
 
-type Props = {};
 const Header = (props: Props) => {
   return (
     <div className="header">
@@ -9,22 +8,22 @@ const Header = (props: Props) => {
         <nav className="header__wrapper">
           <ul className="header__body">
             <li>
-              <a href="#">Розклад</a>
+              <button>Розклад</button>
             </li>
             <li>
-              <a href="#">Дітям</a>
+              <button>Дітям</button>
             </li>
             <li>
-              <a href="#">3D Панорама</a>
+              <button>3D Панорама</button>
             </li>
             <li>
-              <a href="#">Ігротека</a>
+              <button>Ігротека</button>
             </li>
             <li>
-              <a href="#">Burger CIty</a>
+              <button>Burger CIty</button>
             </li>
             <li>
-              <a href="#">Контакти</a>
+              <button>Контакти</button>
             </li>
           </ul>
         </nav>

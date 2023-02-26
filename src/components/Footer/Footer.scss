@@ -9,8 +9,9 @@ color: #FFFFFF;
 .footer__content {
   display: flex;
 padding: 40px 0;
-a {
+a, button {
   color: #fff;
+  background: transparent;
   &:hover {
     color:  #EBB3FF;
   }
@@ -53,7 +54,8 @@ padding-right: 130px;
   .footer__socials {
     display: flex;
     gap: 24px;
-    a {
+    button {
+      background: transparent;
       display: block;
       width: 24px;
       height: 24px;
