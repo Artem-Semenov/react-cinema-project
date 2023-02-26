@@ -1,1 +1,6 @@
-/*# sourceMappingURL=ScheduleList.css.map */
+.schedule__items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -12px;
+  row-gap: 24px;
+}/*# sourceMappingURL=ScheduleList.css.map */

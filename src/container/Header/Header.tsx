@@ -18,7 +18,7 @@ const Header = () => {
           >
             <span></span>
           </div>
-          <a href="tel:0660000000" className="tel"></a>
+          <a href="tel:0660000000" className="tel"> </a>
           <nav>
             <ul className="header__body">
               <li>

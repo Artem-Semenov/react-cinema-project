@@ -1,5 +1,4 @@
 import "./WhyUsListItem.css";
-import { classToggle } from "utils/helpers/classtoggle";
 
 type Props = {
   icon: string;

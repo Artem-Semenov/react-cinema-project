@@ -1,6 +1,6 @@
 import Container from "components/Container/Container";
-import ScheduleListItem from "./ScheduleListItem/ScheduleListItem";
 import './Schedule.css'
+import ScheduleList from "./ScheduleList/ScheduleList";
 
 type ScheduleProps = {
   props: {
@@ -41,21 +41,7 @@ const Schedule = ({
       ) : (
         ""
       )}
-      <ul className="schedule__items">
-        {items.map(({ img, id, timeArr, title }: Itemprops) => {
-          return (
-            
-            <ScheduleListItem
-              img={img}
-              id={id}
-              timeArr={timeArr}
-              title={title}
-              key={id}
-            />
-           
-          );
-        })}
-      </ul>
+      <ScheduleList items = {items}/>
       </div>
     </Container>
   );

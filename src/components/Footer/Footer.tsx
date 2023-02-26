@@ -33,10 +33,10 @@ const Footer = (props: Props) => {
             </ul>
           </nav>
           <div className="footer__contacts">
-            <h3>Контакти</h3>
+            <h3 className="s-d-none">Контакти</h3>
             <ul>
-              <li><a href="tel:+38 (066) 591 69 27">+38 (066) 591 69 27</a></li>
-              <li><a href="mailto:support@5element.uz.ua">support@5element.uz.ua</a></li>
+              <li className="s-d-none"><a href="tel:+38 (066) 591 69 27">+38 (066) 591 69 27</a></li>
+              <li className="s-d-none"><a href="mailto:support@5element.uz.ua">support@5element.uz.ua</a></li>
               <li><a href="https://goo.gl/maps/qZFtA9VHWVaCiuQv6">Адрес: вулиця Легоцького, 19а, Ужгород</a></li>
               <li>ТРЦ "TOKYO", 3й поверх</li>
             </ul>

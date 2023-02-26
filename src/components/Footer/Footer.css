@@ -1,3 +1,7 @@
+.s-d-none {
+  display: none;
+}
+
 .footer__bg {
   background: rgba(5, 0, 255, 0.1);
   font-family: "Montserrat";
@@ -8,6 +12,9 @@
 
 .footer__content {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   padding: 40px 0;
 }
 .footer__content a, .footer__content button {
@@ -18,6 +25,7 @@
   color: #EBB3FF;
 }
 .footer__content .logo {
+  display: none;
   font-family: "Orbitron";
   font-weight: 900;
   font-size: 16px;
@@ -32,15 +40,13 @@
   padding-left: 48px;
 }
 .footer__content .footer__navigation {
+  display: none;
   padding-right: 100px;
 }
 .footer__content .footer__navigation ul {
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-.footer__content .footer__contacts {
-  padding-right: 130px;
 }
 .footer__content .footer__contacts h3 {
   margin-bottom: 8px;
@@ -49,6 +55,9 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+.footer__content .footer__contacts ul li {
+  text-align: center;
 }
 .footer__content .footer__socials {
   display: flex;
@@ -65,4 +74,26 @@
 }
 .footer__content .footer__socials .insta-icon:hover svg path, .footer__content .footer__socials .fb-icon:hover svg path {
   fill: #EBB3FF;
+}
+
+@media (min-width: 768px) {
+  .s-d-none {
+    display: block;
+  }
+  .footer__content {
+    flex-direction: row;
+  }
+  .footer__content .logo {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  .footer__content .footer__navigation {
+    display: block;
+  }
+}
+@media (min-width: 1300px) {
+  .footer__content .footer__contacts {
+    padding-right: 130px;
+  }
 }/*# sourceMappingURL=Footer.css.map */

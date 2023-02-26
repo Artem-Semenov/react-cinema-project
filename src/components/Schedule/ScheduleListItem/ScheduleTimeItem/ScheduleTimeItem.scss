@@ -4,7 +4,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 16px;
 line-height: 20px;
-padding: 6px 24px;
+padding: 5px 6px;
 color: #FFFFFF;
 display: inline-block;
 border: 1px solid #D9D9D9;
@@ -16,4 +16,17 @@ cursor: pointer;
   border-color: transparent;
 
 }
+}
+
+@media(min-width: 768px) {
+  
+}
+@media(min-width: 1024px) {
+
+}
+@media(min-width: 1300px) {
+  .schedule-list-time__item {
+padding: 6px 24px;
+
+  }
 }

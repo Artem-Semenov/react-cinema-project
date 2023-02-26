@@ -19,6 +19,7 @@ margin-bottom: 40px;
 
 
 p {
+  display: none;
   margin-top: 8px;
 font-family: 'Montserrat';
 font-style: normal;
@@ -45,6 +46,10 @@ color: #FFFFFF;
     flex-direction: column;
     .img__wrapper {
 
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
 
   } 
@@ -68,4 +73,36 @@ letter-spacing: 0.0012em;
 }
 }
 
+}
+
+@media(min-width: 768px) {
+  .where-we-located__body {
+  .where-we-located__content {
+    p {
+display: block;
+    }
+
+  }
+    }
+
+  .photo_block { 
+  p {
+    padding: 0 20px;
+  }
+  }
+
+}
+@media(min-width: 1024px) {
+  .photo_block { 
+    p {
+      padding: 0 80px;
+    }
+    }
+}
+@media(min-width: 1300px) {
+  .photo_block { 
+    p {
+      padding: 0;
+    }
+    }
 }

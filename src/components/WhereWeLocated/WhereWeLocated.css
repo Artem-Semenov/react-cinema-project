@@ -19,6 +19,7 @@
   margin: 0 -12px;
 }
 .where-we-located__body .where-we-located__content p {
+  display: none;
   margin-top: 8px;
   font-family: "Montserrat";
   font-style: normal;
@@ -41,6 +42,10 @@
   display: flex;
   flex-direction: column;
 }
+.where-we-located__body .where-we-located__content .photo_block .img__wrapper img {
+  width: 100%;
+  height: auto;
+}
 .where-we-located__body .tel__text {
   text-align: center;
   font-family: "Montserrat";
@@ -57,4 +62,23 @@
 }
 .where-we-located__body .tel__text a:hover {
   color: #EBB3FF;
+}
+
+@media (min-width: 768px) {
+  .where-we-located__body .where-we-located__content p {
+    display: block;
+  }
+  .photo_block p {
+    padding: 0 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .photo_block p {
+    padding: 0 80px;
+  }
+}
+@media (min-width: 1300px) {
+  .photo_block p {
+    padding: 0;
+  }
 }/*# sourceMappingURL=WhereWeLocated.css.map */
