@@ -5,7 +5,7 @@ const Footer = (props: Props) => {
   return (
     <div className="footer__bg">
       <Container>
-        <div className="footer__content">
+        <div className="footer__content"  id="footer">
           <div className="logo">
             <div>CINEPLEX</div>
             <div>5th ELEMENT</div>

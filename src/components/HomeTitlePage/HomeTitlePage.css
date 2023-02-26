@@ -9,13 +9,16 @@
   font-family: "Orbitron";
   font-style: normal;
   font-weight: 900;
-  font-size: 130px;
-  line-height: 156px;
+  font-size: 32px;
+  line-height: 40px;
   letter-spacing: 0.1em;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .title__body :first-child, .title__body :last-child {
   background: linear-gradient(180deg, #807EFC 21.88%, #0E0BAF 58.15%);
@@ -25,6 +28,28 @@
   text-fill-color: transparent;
 }
 .title__body :last-child {
-  font-size: 110px;
+  font-size: 32px;
+  line-height: 40px;
   text-align: right;
+}
+
+@media (min-width: 768px) {
+  .title__body {
+    max-width: none;
+    font-size: 100px;
+    line-height: 125px;
+  }
+  .title__body :last-child {
+    font-size: 72px;
+    line-height: 90px;
+  }
+}
+@media (min-width: 1300px) {
+  .title__body {
+    font-size: 130px;
+    line-height: 156px;
+  }
+  .title__body :last-child {
+    font-size: 110px;
+  }
 }/*# sourceMappingURL=HomeTitlePage.css.map */

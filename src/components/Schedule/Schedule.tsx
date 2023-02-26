@@ -32,6 +32,7 @@ const Schedule = ({
 }: ScheduleProps) => {
   return (
     <Container>
+      <div className="schedule__content" id="schedule">
       {shouldRenderTitle ? <h2 className="schedule__title">{title}</h2> : ""}
       {shouldRenderDate ? (
         <div className="schedule__date">
@@ -55,6 +56,7 @@ const Schedule = ({
           );
         })}
       </ul>
+      </div>
     </Container>
   );
 };

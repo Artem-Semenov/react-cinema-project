@@ -8,14 +8,16 @@ overflow: hidden auto;
   font-family: 'Orbitron';
 font-style: normal;
 font-weight: 900;
-font-size: 130px;
-line-height: 156px;
+font-size: 32px;
+line-height: 40px;
 letter-spacing: 0.1em;
 min-height: 100vh;
 display: flex;
 flex-direction: column;
 justify-content: center;
-
+max-width: 400px;
+margin-right: auto;
+margin-left: auto;
 
 :first-child, :last-child {
   background: linear-gradient(180deg, #807EFC 21.88%, #0E0BAF 58.15%);
@@ -25,7 +27,34 @@ justify-content: center;
   text-fill-color: transparent;
   }
 :last-child {
-font-size: 110px;
+  font-size: 32px;
+line-height: 40px;
 text-align: right;
 }
 }
+
+@media(min-width: 768px) {
+  .title__body {
+    max-width: none;
+    font-size: 100px;
+    line-height: 125px;
+    :last-child {
+      font-size: 72px;
+line-height: 90px;
+    }
+  }
+}
+@media(min-width: 1024px) {
+.title__body {
+    
+  }
+}
+@media(min-width: 1300px) {
+  .title__body {
+    font-size: 130px;
+line-height: 156px;
+:last-child {
+  font-size: 110px;
+}
+  }
+} 

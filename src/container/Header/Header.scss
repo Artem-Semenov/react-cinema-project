@@ -3,33 +3,143 @@
   width: 100%;
 }
 .header__wrapper {
-
+  min-width: 100px;
+  padding-top: 40px;
+  .tel {
+    display: block;
+    float: right;
+    width: 35px;
+    height: 35px;
+    background: url(/public/images/Icons/Tel.svg) center no-repeat;
+  }
+  .burger-menu__button, .tel {
+    margin-top: -10px;
+  }
 }
 .header__body {
 display: flex;
-padding: 40px 0px 0px 0px;
 width: fit-content;
 margin: auto;
 transition: all ease .3s .3s;
+
+.burger-menu__body {
+position: fixed;
+top: 100px;
+left: 0;
+right: 0;
+bottom: 0;
+display: flex;
+flex-direction: column;
+transform: translateX(-100%);
+transition: all ease .3s;
+&.show {
+transform: translateX(0);
+}
+}
 
 li {
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 400;
-font-size: 16px;
 line-height: 20px;
 letter-spacing: 0.0012em;
 button {
+  font-size: 16px;
   cursor: pointer;
   padding: 0px 8px;
-  border-bottom: 3px solid #BD00FF;
   transition: all ease .3s;
   color: #fff;
   background: transparent;
   &:hover {
     font-weight: 700;
-    border-bottom: 3px solid #0500FF;
   }
 }
 }
+}
+.burger-menu__button {
+  float: left;
+  position: relative;
+  margin-right: auto;
+  width: 35px;
+  height: 35px;
+  &:before, &:after, span {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    left: 0;
+    display: block;
+    background: #fff;
+    transition: all ease .3s;
+  }
+  &:before, &:after {
+    content: "";
+
+  } 
+&:before {
+top: 0;
+}
+
+&:after {
+bottom: 0;
+}
+span {
+top: 50%;
+transform: scale(1);
+}
+
+&.show {
+
+&:before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0px, -50%)
+}
+
+&:after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0px, 50%)
+}
+span {
+  transform: scale(0) translate(0px, -50%);
+}
+
+}
+
+}
+
+
+@media (min-width: 768px) {
+  .burger-menu__button {
+    display: none;
+  }
+  .header__wrapper {
+    .tel {
+      display: none;
+    }
+  }
+  .header__body {
+    .burger-menu__body {
+      flex-direction: row;
+      position: static;
+      transform: none;
+      transition: none;
+
+      
+      }
+      li {
+
+        button {
+          border-bottom: 3px solid #BD00FF;
+          &:hover  {
+    border-bottom: 3px solid #0500FF;
+
+          }
+        }
+      }
+  }
+}
+@media (min-width: 1024px) {
+  
+}
+@media (min-width: 1300px) {
+  
 }

@@ -1,0 +1,15 @@
+{
+  "name": "My React App",
+  "short_name": "React App",
+  "description": "This is my React app.",
+  "icons": [
+    {
+      "src": "images/Footer/fb-icon.svg",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
+}
