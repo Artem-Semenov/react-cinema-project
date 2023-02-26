@@ -1,7 +1,7 @@
 import Container from "components/Container/Container";
 import "./Header.css";
 
-const Header = (props: Props) => {
+const Header = () => {
   return (
     <div className="header">
       <Container>
