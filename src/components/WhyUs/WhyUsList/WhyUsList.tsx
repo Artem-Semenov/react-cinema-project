@@ -2,8 +2,6 @@ import WhyUsListItem from "../WhyUsListItem/WhyUsListItem"
 import './WhyUsList.css'
 import whyUsData from "utils/whyUsContentArr"
 
-type Props = {}
-
 const WhyUsList = () => {
   return (
     <div className="why-us-list__body">
