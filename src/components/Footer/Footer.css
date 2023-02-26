@@ -83,6 +83,9 @@
   .footer__content {
     flex-direction: row;
   }
+  .footer__content .footer__contacts ul li {
+    text-align: left;
+  }
   .footer__content .logo {
     display: block;
   }
