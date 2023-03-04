@@ -1,6 +1,7 @@
 
 .schedule__title {
   font-family: 'Montserrat';
+  font-weight: 700;
   font-size: 40px;
   line-height: 49px;
   margin-bottom: 8px;
@@ -12,7 +13,24 @@
   font-family: 'Montserrat';
   font-size: 16px;
   line-height: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
   letter-spacing: 0.1em;
   color: #FFFFFF;
+}
+.schedule__title, .schedule__date {
+  text-align: center;
+}
+@media(min-width: 768px) {
+
+}
+@media(min-width: 1024px) {
+  .schedule__title, .schedule__date {
+    text-align: left;
+  }
+  .schedule__date  {
+  margin-bottom: 40px;
+
+  }
+}
+@media(min-width: 1300px) {
 }

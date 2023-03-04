@@ -1,4 +1,3 @@
-import Footer from "components/Footer/Footer";
 import HomeTitlePage from "components/HomeTitlePage/HomeTitlePage"
 import Schedule from "components/Schedule/Schedule"
 import WhereWeLocated from "components/WhereWeLocated/WhereWeLocated";
@@ -38,7 +37,6 @@ const Home = (props: Props) => {
     <WhyUs/>
     <Schedule props = {scheduleProps}/>
     <WhereWeLocated/>
-    <Footer/>
     </>
   )
 }

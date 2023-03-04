@@ -1,14 +1,15 @@
-import './Container.css'
+import './Container.scss';
+
 
 type Props = {
   children: React.ReactNode; 
   mh100vh?: boolean
 }
-const Container = (props: Props) => {
-  return (
-    <div className= {`container ${props.mh100vh ? 'mh100vh' : ''}`}>
-      {props.children}
+
+const Container = ({ children, mh100vh }: Props) => {
+  return <div className= {`container ${mh100vh ? 'mh100vh' : ''}`}>
+      {children}
     </div>
-  )
+  
 }
-export default Container
+export default Container 

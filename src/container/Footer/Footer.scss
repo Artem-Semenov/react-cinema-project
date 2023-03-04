@@ -14,7 +14,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 gap: 8px;
-padding: 40px 0;
+padding: 16px 0;
 a, button {
   color: #fff;
   background: transparent;
@@ -97,6 +97,10 @@ padding-right: 130px;
       display: block;
     }
   .footer__content {
+    .tel__text {
+      display: none;
+    }
+    padding: 24px 0;
 flex-direction: row;
 .footer__contacts {
   ul {
@@ -114,6 +118,7 @@ flex-direction: row;
   @media(min-width: 1024px) {
   
     .footer__content {
+padding: 40px 0;
       .footer__navigation { 
     display: block;
       }

@@ -1,5 +1,5 @@
 import Container from "components/Container/Container";
-import './Schedule.css'
+import './Schedule.scss'
 import ScheduleList from "./ScheduleList/ScheduleList";
 
 type ScheduleProps = {

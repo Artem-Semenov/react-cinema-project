@@ -1,4 +1,4 @@
-import "./Locomotive.css";
+import "./Locomotive.scss";
 
 type Props = {};
 const Locomotive = (props: Props) => {

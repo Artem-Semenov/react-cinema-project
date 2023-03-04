@@ -1,5 +1,5 @@
 import ScheduleListItem from "../ScheduleListItem/ScheduleListItem";
-import './ScheduleList.css'
+import './ScheduleList.scss'
 type Itemprops ={ 
   items: Array<
 {id: number;

@@ -1,6 +1,6 @@
 import Container from "components/Container/Container";
 import Locomotive from "components/Locomotive/Locomotive";
-import "./HomeTitlePage.css";
+import "./HomeTitlePage.scss";
 type Props = {};
 const HomeTitlePage = (props: Props) => {
   return (

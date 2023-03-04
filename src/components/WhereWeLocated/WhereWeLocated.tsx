@@ -1,6 +1,6 @@
 import Container from "components/Container/Container";
 import Map from "components/GoogleMap/GoogleMap";
-import "./WhereWeLocated.css";
+import "./WhereWeLocated.scss";
 
 
 type Props = {};

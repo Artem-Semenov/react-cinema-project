@@ -1,7 +1,8 @@
 import Container from "components/Container/Container";
-import "./Header.css";
+import "./Header.scss";
 import { smoothScroll } from "utils/helpers/smoothScroll";
 import { classToggle } from "utils/helpers/classtoggle";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -22,9 +23,12 @@ const Header = () => {
           <nav>
             <ul className="header__body">
               <li>
-                <button onClick={() => smoothScroll("schedule")}>
+                <NavLink to={'/schedule'}>
+                <button >
                   Розклад
                 </button>
+                </NavLink>
+               
               </li>
               <div className="burger-menu__body" id="burger-body">
                 <li>

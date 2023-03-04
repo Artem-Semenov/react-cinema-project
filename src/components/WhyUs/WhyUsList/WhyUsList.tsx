@@ -1,5 +1,5 @@
 import WhyUsListItem from "../WhyUsListItem/WhyUsListItem"
-import './WhyUsList.css'
+import './WhyUsList.scss'
 import whyUsData from "utils/whyUsContentArr"
 
 const WhyUsList = () => {

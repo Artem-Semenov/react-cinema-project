@@ -1,4 +1,4 @@
-import "./WhyUsListItem.css";
+import "./WhyUsListItem.scss";
 
 type Props = {
   icon: string;

@@ -1,4 +1,4 @@
-import './ScheduleTimeItem.css'
+import './ScheduleTimeItem.scss'
 type Props = {
   time: string
   id: number

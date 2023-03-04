@@ -16,8 +16,10 @@ letter-spacing: 0.0012em;
 }
 
   .time__wrapper {
+    margin-top: auto;
 display: flex;
 justify-content: center;
+gap: 7.18%;
   }
 }
 
@@ -25,6 +27,7 @@ justify-content: center;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  height: 100%;
   img {
     width: 100%;
     height: auto;
@@ -49,8 +52,8 @@ justify-content: center;
   }
   .schedule-list__item_content {
     img {
-      width: 236px;
-      height: 250px;
+      width: 100%;
+      height: auto;
     }
   }
 }

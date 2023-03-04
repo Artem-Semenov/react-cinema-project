@@ -1,5 +1,5 @@
 import ScheduleTimeItem from "./ScheduleTimeItem/ScheduleTimeItem";
-import "./ScheduleListItem.css";
+import "./ScheduleListItem.scss";
 type Itemprops = {
   id: number;
   img: string;
