@@ -2,13 +2,18 @@ import Container from "components/Container/Container";
 import "./Header.scss";
 import { smoothScroll } from "utils/helpers/smoothScroll";
 import { classToggle } from "utils/helpers/classtoggle";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Header = () => {
+  let location = useLocation(); 
+  console.log(location)
   return (
     <div className="header">
       <Container>
-        <div className="header__wrapper">
+        {location.pathname === '/schedule' ? <h1 className="center-logo">
+       <NavLink to={'/'}>CINEPLEX</NavLink> 
+        </h1> : ''}
+        <div className= {location.pathname === '/schedule' ? "header__wrapper schedule__header-wrapper" : "header__wrapper"} >
           <div
             onClick={() => {
               classToggle("burger-body", "show");

@@ -1,5 +1,6 @@
 .header {
   position: absolute;
+  top: 0;
   width: 100%;
 }
 .header__wrapper {
@@ -15,6 +16,9 @@
   .burger-menu__button, .tel {
     margin-top: -10px;
   }
+}
+.schedule__header-wrapper {
+  padding-top: 8px;
 }
 .header__body {
 display: flex;
@@ -106,6 +110,20 @@ span {
 
 }
 
+.center-logo{
+  text-align: center;
+font-family: 'Orbitron';
+font-style: normal;
+font-weight: 900;
+font-size: 24px;
+line-height: 30px;
+letter-spacing: 0.1em;
+margin-top: 24px;
+
+a {
+  color: rgba(255, 255, 255, 0.2);
+}
+}
 
 @media (min-width: 768px) {
   .burger-menu__button {
@@ -136,10 +154,24 @@ span {
         }
       }
   }
+  .center-logo {
+    margin-top: 32px;
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .schedule__header-wrapper {
+    padding-top: 8px;
+  }
 }
 @media (min-width: 1024px) {
-  
+  .center-logo {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .schedule__header-wrapper {
+    padding-top: 16px;
+  }
 }
 @media (min-width: 1300px) {
-  
+
 }

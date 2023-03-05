@@ -20,6 +20,16 @@
 .schedule__title, .schedule__date {
   text-align: center;
 }
+.schedulePage {
+   &.mt-160{
+
+    margin-top: 160px;
+  
+   }
+    &.mb-80 {
+    margin-bottom: 80px;
+  }
+}
 @media(min-width: 768px) {
 
 }
@@ -33,4 +43,9 @@
   }
 }
 @media(min-width: 1300px) {
+  .title-margin {
+.schedule__title {
+  margin-bottom: 40px;
+}
+  }
 }
