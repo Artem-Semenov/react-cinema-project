@@ -37,9 +37,13 @@ margin-left: auto;
    text-shadow: -3px -2px 25px rgba(5, 0, 255, 0.5), 3px 7px 25px rgba(255, 0, 122, 0.5);
   }
 
+  :first-child {
+    font-size: 40px;
+    line-height: 52px;
+  }
 :last-child {
-  font-size: 32px;
-line-height: 40px;
+  font-size: 36px;
+line-height: 48px;
 text-align: right;
 
 
@@ -49,8 +53,11 @@ text-align: right;
 @media(min-width: 768px) {
   .title__body {
     max-width: none;
-    font-size: 100px;
-    line-height: 125px;
+    :first-child {
+      font-size: 100px;
+      line-height: 125px;
+    }
+
     :last-child {
       font-size: 72px;
 line-height: 90px;
@@ -64,10 +71,14 @@ line-height: 90px;
 }
 @media(min-width: 1300px) {
   .title__body {
-    font-size: 130px;
-line-height: 156px;
+    
+    :first-child {
+      font-size: 140px;
+      line-height: 176px;
+    }
 :last-child {
-  font-size: 110px;
+  font-size: 120px;
+  line-height: 150px;
 }
   }
 } 

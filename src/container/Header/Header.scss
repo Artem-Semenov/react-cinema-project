@@ -9,9 +9,10 @@
   .tel {
     display: block;
     float: right;
-    width: 35px;
-    height: 35px;
+    width: 27px;
+    height: 27px;
     background: url(/images/Icons/Tel.svg) center no-repeat;
+    background-size: cover;
   }
   .burger-menu__button, .tel {
     margin-top: -10px;
@@ -64,8 +65,8 @@ button {
   float: left;
   position: relative;
   margin-right: auto;
-  width: 35px;
-  height: 35px;
+  width: 27px;
+  height: 27px;
   &:before, &:after, span {
     position: absolute;
     width: 100%;

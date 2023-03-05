@@ -1,0 +1,19 @@
+.page-scroll-indicator {
+  cursor: pointer;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 100;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-scroll-indicator__body {
+width: 28px;
+height: 28px;
+border-radius: 50%;
+background:  #6B6B6B url(/images/Icons/arrow-up.svg) center no-repeat;
+}
