@@ -1,4 +1,3 @@
-import Container from 'components/Container/Container'
 import './WhyUs.scss'
 import WhyUsList from './WhyUsList/WhyUsList'
 

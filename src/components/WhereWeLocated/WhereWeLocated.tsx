@@ -1,4 +1,3 @@
-import Container from "components/Container/Container";
 import Map from "components/GoogleMap/GoogleMap";
 import "./WhereWeLocated.scss";
 
@@ -16,10 +15,6 @@ const WhereWeLocated = (props: Props) => {
         </div>
         <div className="photo_block">
           <div className="img__wrapper">
-            {/*  <img
-                src="/images/WhereWeLocated/WhereWeLocated.png"
-                alt="location"
-              /> */}
             <picture>
               <source
                 srcSet="/images/WhereWeLocated/WhereWeLocated.png"
@@ -29,6 +24,7 @@ const WhereWeLocated = (props: Props) => {
               <img
                 src="/images/WhereWeLocated/WhereWeLocated.png"
                 height="300"
+                alt="location"
               />
             </picture>
           </div>

@@ -1,6 +1,4 @@
-import Container from "components/Container/Container";
 import "./Header.scss";
-import { smoothScroll } from "utils/helpers/smoothScroll";
 import { classToggle } from "utils/helpers/classtoggle";
 import { NavLink } from "react-router-dom";
 

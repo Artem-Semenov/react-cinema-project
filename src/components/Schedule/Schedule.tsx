@@ -1,4 +1,3 @@
-import Container from "components/Container/Container";
 import "./Schedule.scss";
 import ScheduleList from "./ScheduleList/ScheduleList";
 
