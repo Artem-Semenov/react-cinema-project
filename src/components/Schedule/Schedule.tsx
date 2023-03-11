@@ -11,6 +11,8 @@ type ScheduleProps = {
     dateTo: string;
     items: Array<Itemprops>;
     classNames?: string;
+    shouldRenderDesc?: boolean
+    scheduleDesc?: string
   };
 };
 
@@ -30,27 +32,28 @@ const Schedule = ({
     dateTo,
     items,
     classNames = "",
+    shouldRenderDesc = false,
+    scheduleDesc = ""
   },
 }: ScheduleProps) => {
   return (
     <div className={classNames ? classNames + " schedule" : "schedule"}>
-      <Container>
-        <div className="schedule__content" id="schedule">
-          {shouldRenderTitle ? (
-            <h2 className="schedule__title">{title}</h2>
-          ) : (
-            ""
-          )}
-          {shouldRenderDate ? (
-            <div className="schedule__date">
-              З {dateFrom} по {dateTo}:
-            </div>
-          ) : (
-            ""
-          )}
-          <ScheduleList items={items} />
-        </div>
-      </Container>
+      <div className="schedule__content" id="schedule">
+        {shouldRenderTitle ? <h2 className="schedule__title">{title}</h2> : ""}
+        {shouldRenderDate ? (
+          <div className="schedule__date">
+            З {dateFrom} по {dateTo}:
+          </div>
+        ) : (
+          ""
+        )}
+        {shouldRenderDesc ? (
+          <div className="schedule_desc">{scheduleDesc}</div>
+        ) : (
+          ""
+        )}
+        <ScheduleList items={items} />
+      </div>
     </div>
   );
 };

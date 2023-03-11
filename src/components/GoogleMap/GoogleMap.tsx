@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 
 interface MapProps {
@@ -12,6 +12,12 @@ declare global {
 }
 
 const Map: React.FC<MapProps> = ({ apiKey }) => {
+  const [windowWidth, setWindwoWidth] = useState<number>(window.innerWidth);
+
+  const onResize = () => {
+    setWindwoWidth(window.innerWidth);
+  }
+
   useEffect(() => {
     const loader = new Loader({
       apiKey,
@@ -33,9 +39,11 @@ const Map: React.FC<MapProps> = ({ apiKey }) => {
         title: "5th Element",
       });
     });
+
+    window.addEventListener('resize', onResize)
   }, [apiKey]);
 
-  return <div id="map" style={{ height: "100%" }} />;
+  return <div id="map" style={{height: windowWidth < 768 ? "300px" : "100%" }} />;
 };
 
 export default Map;

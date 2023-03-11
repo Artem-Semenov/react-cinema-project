@@ -2,26 +2,16 @@ import Container from "components/Container/Container";
 import "./Header.scss";
 import { smoothScroll } from "utils/helpers/smoothScroll";
 import { classToggle } from "utils/helpers/classtoggle";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
-  let location = useLocation();
   return (
     <div className="header">
-      <Container>
-        {location.pathname === "/schedule" ? (
-          <h1 className="center-logo">
-            <NavLink to={"/"}>CINEPLEX</NavLink>
-          </h1>
-        ) : (
-          ""
-        )}
-        <div
-          className={
-            location.pathname === "/schedule"
-              ? "header__wrapper schedule__header-wrapper"
-              : "header__wrapper"
-          }>
+      
+        <h1 className="center-logo">
+          <NavLink to={"/"}>CINEPLEX</NavLink>
+        </h1>
+        <div className="header__wrapper schedule__header-wrapper">
           <div
             onClick={() => {
               classToggle("burger-body", "show");
@@ -38,30 +28,30 @@ const Header = () => {
             <ul className="header__body">
               <li>
                 <NavLink to={"/schedule"}>
-                  <button>Розклад</button>
+                  Розклад
                 </NavLink>
               </li>
               <div className="burger-menu__body" id="burger-body">
                 <li>
-                  <button>Дітям</button>
+                  <NavLink to={"/for-kids"}>Дітям</NavLink>
                 </li>
                 <li>
-                  <button>3D Панорама</button>
+                  <NavLink to={"/3d"}>3D Панорама</NavLink>
                 </li>
                 <li>
-                  <button>Ігротека</button>
+                  <NavLink to={"/game-center"}>Ігротека</NavLink>
                 </li>
                 <li>
-                  <button>Burger CIty</button>
+                  <NavLink to={"/burger-city"}>Burger CIty</NavLink>
                 </li>
               </div>
               <li>
-                <button onClick={() => smoothScroll("footer")}>Контакти</button>
+                <NavLink to={"/contacts"}>Контакти</NavLink>
               </li>
             </ul>
           </nav>
         </div>
-      </Container>
+      
     </div>
   );
 };

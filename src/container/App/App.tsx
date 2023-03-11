@@ -13,9 +13,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/schedule" element={<SchedulePage />}></Route>
+        <Route path="/for-kids" element={<SchedulePage />}></Route>
+        <Route path="/3d" element={<SchedulePage />}></Route>
+        <Route path="/game-center" element={<SchedulePage />}></Route>
+        <Route path="/burger-city" element={<SchedulePage />}></Route>
+        <Route path="/contacts" element={<SchedulePage />}></Route>
       </Routes>
       <Footer />
-      <PageScrollIndicator/>
+      <PageScrollIndicator />
     </>
   );
 }

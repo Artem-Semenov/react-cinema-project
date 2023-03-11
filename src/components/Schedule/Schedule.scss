@@ -14,22 +14,30 @@
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 16px;
-  letter-spacing: 0.1em;
   color: #FFFFFF;
 }
 .schedule__title, .schedule__date {
   text-align: center;
 }
 .schedulePage {
-   &.mt-160{
-
-    margin-top: 160px;
-  
-   }
+  &.mb-40 {
+    margin-bottom: 40px;
+  }
     &.mb-80 {
     margin-bottom: 80px;
   }
+  .schedule_desc {
+font-family: 'Montserrat';
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0.0012em;
+color: #FFFFFF;
+max-width: 832px;
+margin-bottom: 24px;
+  }
 }
+
 @media(min-width: 768px) {
 
 }
@@ -39,13 +47,15 @@
   }
   .schedule__date  {
   margin-bottom: 40px;
+  font-size: 24px;
+  line-height: 140%;
 
   }
 }
 @media(min-width: 1300px) {
   .title-margin {
 .schedule__title {
-  margin-bottom: 40px;
+  margin-bottom: 16px;
 }
   }
 }

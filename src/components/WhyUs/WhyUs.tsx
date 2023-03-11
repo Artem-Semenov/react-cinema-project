@@ -6,12 +6,10 @@ type Props = {}
 
 const WhyUs = (props: Props) => {
   return (
-    <Container>
       <div className="why-us__body">
         <h2>Чому ми?</h2>
         <WhyUsList/>
       </div>
-    </Container>
   )
 }
 export default WhyUs
