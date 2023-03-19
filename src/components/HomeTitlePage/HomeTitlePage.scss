@@ -1,4 +1,5 @@
 .bg-wrapper {
+margin-top: -136px;
 min-height: 100vh;
 background: rgba(0, 0, 0, 0.3) url(/images/Home/Main-page-bg.png) center no-repeat;
 background-size: cover;
@@ -21,13 +22,6 @@ margin-left: auto;
 
 
 :first-child, :last-child {
- /*    background: linear-gradient(180deg, #807EFC 21.88%, #0E0BAF 58.15%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;   */
-
-
   background: linear-gradient(90deg, rgba(220,122,255,1) 0%, rgba(146,136,255,1) 38%, rgba(0,163,255,1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: black;

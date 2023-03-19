@@ -57,7 +57,7 @@ const schedulePropsWatchClose: ScheduleProps = {
 const SchedulePage = (props: Props) => {
   return (
     <Container>
-      <div className="SchedulePage" style={{ marginTop: "136px" }}>
+      <div className="SchedulePage">
         <p className="schedulePage__desc">
           Ласкаво просимо на сторінку розкладу нашого кінотеатру, де ви можете
           знайти всю необхідну інформацію про останні фільми та розклад сеансів

@@ -6,7 +6,7 @@ type Itemprops = {
   img: string;
   timeArr: Array<string>;
   title: string;
-  titleFotDomain: string;
+  titleForDomain: string;
 };
 
 const ScheduleListItem = ({
@@ -14,12 +14,12 @@ const ScheduleListItem = ({
   img,
   timeArr,
   title,
-  titleFotDomain,
+  titleForDomain,
 }: Itemprops) => {
   return (
     <li className="schedule-list__item__wrapper" key={id}>
       <div className="schedule-list__item_content">
-        <NavLink to={`/schedule/${titleFotDomain}`}>
+        <NavLink to={`/schedule/${titleForDomain}`} state={{ time: -1, id }}>
           <div className="img">
             <div className="background"></div>
             <div className="buy-icon-wrapper">
@@ -57,7 +57,14 @@ const ScheduleListItem = ({
         <h2>{title}</h2>
         <div className="time__wrapper">
           {timeArr.map((el, i) => {
-            return <ScheduleTimeItem time={el} id={id} key={i} />;
+            return (
+              <ScheduleTimeItem
+                time={el}
+                key={i}
+                id ={id}
+                titleForDomain={titleForDomain}
+              />
+            );
           })}
         </div>
       </div>
