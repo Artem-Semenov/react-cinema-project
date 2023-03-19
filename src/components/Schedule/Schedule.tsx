@@ -20,6 +20,7 @@ type Itemprops = {
   img: string;
   timeArr: Array<string>;
   title: string;
+  titleForDomain: string;
 };
 
 const Schedule = ({

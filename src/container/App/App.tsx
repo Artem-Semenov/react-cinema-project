@@ -5,6 +5,7 @@ import PageScrollIndicator from "components/PageScrollIndicator/PageScrollIndica
 import Home from "pages/Home/Home";
 import { Routes, Route } from "react-router-dom";
 import SchedulePage from "pages/SchedulePage/SchedulePage";
+import FilmPage from "pages/FilmPage/FilmPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/game-center" element={<SchedulePage />}></Route>
         <Route path="/burger-city" element={<SchedulePage />}></Route>
         <Route path="/contacts" element={<SchedulePage />}></Route>
+        <Route path="/schedule/:id" element={<FilmPage />}></Route>
       </Routes>
       <Footer />
       <PageScrollIndicator />

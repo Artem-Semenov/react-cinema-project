@@ -6,13 +6,14 @@ type Itemprops ={
   img: string;
   timeArr: Array<string>;
   title: string;
+  titleForDomain: string;
 }>
 }
 
 const ScheduleList = ({items}: Itemprops) => {
   return (
     <ul className="schedule__items">
-    {items.map(({ img, id, timeArr, title }) => {
+    {items.map(({ img, id, timeArr, title, titleForDomain }) => {
       return (
         
         <ScheduleListItem
@@ -21,6 +22,7 @@ const ScheduleList = ({items}: Itemprops) => {
           timeArr={timeArr}
           title={title}
           key={id}
+          titleFotDomain = {titleForDomain}
         />
        
       );

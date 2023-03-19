@@ -21,6 +21,7 @@ type Itemprops = {
   img: string;
   timeArr: Array<string>;
   title: string;
+  titleForDomain: string;
 };
 
 const schedulePropsWatchNow: ScheduleProps = {
@@ -63,9 +64,10 @@ const SchedulePage = (props: Props) => {
         </p>
         <Schedule props={schedulePropsWatchNow} />
         <div className="schedulePage__artickle">
-          Ми пишаємося тим, що забезпечуємо найкращий кінематографічний досвід
-          для нашої аудиторії Незалежно від того, чи є ви прихильником
-          бойовиків, романтики, драми чи комедії, у нас є новинка для кожного!
+          <span>Ми пишаємося тим, що забезпечуємо найкращий кінематографічний досвід
+          для нашої аудиторії. </span>
+          <span> Незалежно від того, чи є ви прихильником
+          бойовиків, романтики, драми чи комедії, у нас є новинка для кожного!</span>
         </div>
         <Schedule props={schedulePropsWatchNextWeek} />
         <Schedule props={schedulePropsWatchClose} />

@@ -1,12 +1,13 @@
 .schedulePage__desc {
   font-family: 'Montserrat';
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 140%;
   text-align: center;
   letter-spacing: 0.0012em;
   color: #FFFFFF;
-  padding: 40px 150px 80px 150px;
+  margin-top: 24px;
+  margin-bottom: 48px;
 }
 .schedulePage__artickle {
   font-family: 'Montserrat';
@@ -16,5 +17,40 @@
   letter-spacing: 0.0012em;
   color: #FFFFFF;
   max-width: 832px;
+  margin-bottom: 48px;
+  span {
+    display: block;
+  }
+  :first-child{
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sm-d-none {
+   display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .schedulePage__artickle {
+    span {
+      display: inline;
+    }
+    :first-child {
+      margin-bottom: 0;
+    }
+  }
+}
+@media (min-width: 1300px) {
+  .schedulePage__desc{
+  padding: 40px 150px 0px 150px;
+  font-size: 24px;
   margin-bottom: 80px;
+
+
+}
+.schedulePage__artickle  {
+  margin-bottom: 80px;
+}
+
 }
