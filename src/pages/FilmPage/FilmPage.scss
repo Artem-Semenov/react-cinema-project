@@ -1,15 +1,151 @@
+.film__wrapper {
+padding: 25px 0;
+font-family: 'Montserrat';
+font-style: normal;
+color: #FFFFFF;
+letter-spacing: 0.0012em;
+}
+.film__content_title-mobile {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 16px;
+  @media(min-width: 768px) {
+    display: none;
+  }
+}
+
 .film__content {
+display: flex;
+flex-direction: column;
+gap: 16px;
+
+@media(min-width: 768px) {
+  flex-direction: row;
+}
+
+}
+.timeAndButtonsBlock {
+margin-top: auto;
 }
 .film__content_img {
-}
-.film__content_body {
-}
-.film__content_description {
-}
-.film__content_title {
+
+  img {
+    height: 351px;
+width: 100%;
+  }
+  @media(min-width: 768px) {
+    width: 50%;
+    img {
+      height: 366px;
+    }
+  }
+  @media(min-width: 1024px) {
+    width: 32.9%;
+  img {
+    height: 504px;
+  }
+  }
 }
 .film__content_time {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 7.18%;
+  margin-bottom: 16px;
+  @media (min-width: 1024px) {
+  justify-content: flex-start;
+  gap: 24px;    
+  }
 }
+.film__content_buttons-wrapper {
+display: flex;
+justify-content: space-between;
+margin-bottom: 24px;
+gap: 16px;
+@media(min-width: 768px) {
+  margin-bottom: 0;
+
+}
+@media(min-width: 1024px) {
+ padding-right: 108px;
+}
+}
+.film__content_body {
+  display: flex;
+  flex-direction: column;
+  @media(min-width: 768px) {
+    width: 50%;
+  }
+  @media(min-width: 1024px) {
+    width: 59%;
+  }
+}
+.film__content_description {
+  
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+line-height: 20px;
+margin-bottom: 16px;
+
+}
+.film__content_text-mobile-button {
+  background: none;
+  span {  
+  color: #8280FF;
+  display: flex;
+  &::after{
+    content: '';
+    display: block;
+    margin-left: 14px;
+    width: 10px;
+    height: 10px;
+    clip-path: polygon(50% 100%, 0 50%, 100% 50%);
+    background: #8280FF;
+  }
+  &.open {
+    &::after {
+      clip-path: polygon(50% 50%, 0 100%, 100% 100%);
+
+    }
+  }
+}
+@media(min-width: 768px) {
+ display: none
+}
+}
+.film__content_text-mobile-accord {
+  height: 0px;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 20px;
+  transition: .3s all ease;
+&.open {
+  margin-top: 8px;
+}
+@media(min-width: 768px) {
+  margin-top: 24px;
+  height: auto;
+ }
+@media(min-width: 1024px) {
+display: none;
+ }
+}
+
+.film__content_title {
+  display: none;
+  @media(min-width: 768px) {
+    display: block;
+    margin-bottom: 24px;
+    font-weight: 700;
+font-size: 22px;
+line-height: 27px;
+
+   }
+}
+
 .film__content_country {
 }
 .film__content_releasedOn {
@@ -21,8 +157,14 @@
 .film__content_actors {
 }
 .film__content_text {
+  display: none;
+  @media (min-width: 1024px) {
+    display: block;
+  }
 }
 .film__content_booking {
 }
 .film__content_booking-finish {
+}
+.film__content_text-mobile {
 }
