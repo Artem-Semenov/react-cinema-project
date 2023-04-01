@@ -12,7 +12,7 @@ const FilmPage = (props: Props) => {
   const windowWidth = useAppSelector(state => state.windowSize)
   const location = useLocation();
   const { id } = location.state;
-{//time}
+// time
   const film = filmsData.find((el) => el.id === id);
 
   console.log(film);
