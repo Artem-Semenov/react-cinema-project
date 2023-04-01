@@ -1,7 +1,7 @@
 import Container from "components/Container/Container";
 import { useLocation } from "react-router-dom";
 import filmsData from "utils/filmsData";
-import occupiedSeatsData from "utils/occupiedSeatsData";
+// import occupiedSeatsData from "utils/occupiedSeatsData";
 import "./FilmPage.scss";
 import ScheduleTimeItem from "components/Schedule/ScheduleListItem/ScheduleTimeItem/ScheduleTimeItem";
 import Button from "components/Button/Button";
@@ -11,8 +11,8 @@ type Props = {};
 const FilmPage = (props: Props) => {
   const windowWidth = useAppSelector(state => state.windowSize)
   const location = useLocation();
-  const { time, id } = location.state;
-
+  const { id } = location.state;
+{//time}
   const film = filmsData.find((el) => el.id === id);
 
   console.log(film);

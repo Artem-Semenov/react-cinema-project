@@ -8,7 +8,6 @@ import SchedulePage from "pages/SchedulePage/SchedulePage";
 import FilmPage from "pages/FilmPage/FilmPage";
 import { useAppDispatch } from "redux/hooks";
 import {windowSize} from "redux/windowSize";
-import { useEffect } from "react";
 
 function App() {
   const dispatch = useAppDispatch();
