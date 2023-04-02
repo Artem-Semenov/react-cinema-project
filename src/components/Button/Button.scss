@@ -1,12 +1,15 @@
 .clickable-button {
+  box-sizing: border-box;
 width: 100%;
 padding: 11px 0;
 color: #FFFFFF;
 border: 1px solid #BD00FF;
 text-align: center;
+background: none;
+cursor: pointer;
 &:hover {
   background: #0500FF;
-  border: none;
+  border-color: #0500FF;
 }
 }
 @media(min-width: 768px) {

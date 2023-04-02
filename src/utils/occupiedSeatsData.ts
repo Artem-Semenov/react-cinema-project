@@ -1,4 +1,14 @@
-const occupiedSeatsData = {
+type OccupiedSeatsData = {
+  [id : number]: {
+    [time: string]: {
+      [row: string]: {
+        [seat: string]: boolean
+      };
+    };
+  };
+};
+
+const occupiedSeatsData: OccupiedSeatsData = {
   1: {
     "11:45": {
       row1: {
@@ -6,7 +16,7 @@ const occupiedSeatsData = {
         seat2: false,
         seat3: false,
         seat4: false,
-        seat5: false,
+        seat5: true,
         seat6: false,
         seat7: false,
         seat8: false,
@@ -24,7 +34,7 @@ const occupiedSeatsData = {
       },
       row3: {
         seat1: false,
-        seat2: false,
+        seat2: true,
         seat3: false,
         seat4: false,
         seat5: false,
@@ -623,7 +633,7 @@ const occupiedSeatsData = {
       row5: {
         seat1: false,
         seat2: false,
-        seat3: false,
+        seat3: true,
         seat4: false,
         seat5: false,
         seat6: false,
@@ -636,7 +646,7 @@ const occupiedSeatsData = {
         seat1: false,
         seat2: false,
         seat3: false,
-        seat4: false,
+        seat4: true,
         seat5: false,
         seat6: false,
         seat7: false,
@@ -649,7 +659,7 @@ const occupiedSeatsData = {
         seat2: false,
         seat3: false,
         seat4: false,
-        seat5: false,
+        seat5: true,
         seat6: false,
         seat7: false,
         seat8: false,

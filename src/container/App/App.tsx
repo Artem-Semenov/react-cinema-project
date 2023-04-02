@@ -8,14 +8,18 @@ import SchedulePage from "pages/SchedulePage/SchedulePage";
 import FilmPage from "pages/FilmPage/FilmPage";
 import { useAppDispatch } from "redux/hooks";
 import {windowSize} from "redux/windowSize";
+import { useEffect } from "react";
 
 function App() {
   const dispatch = useAppDispatch();
 
-  window.addEventListener("resize", () => {
-    console.log(window.innerWidth);
+  useEffect(() => {
     dispatch(windowSize(window.innerWidth));
-  });
+    window.addEventListener("resize", () => {
+      dispatch(windowSize(window.innerWidth));
+    });
+  })
+ 
 
   return (
     <>

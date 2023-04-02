@@ -28,7 +28,7 @@ const filmsData = [
   {
     title: 'Кіт в чоботях',
     titleForDomain: 'kit-v-chovotyah',
-    timeArr: ['11:30', '13:35', '17:15'],
+    timeArr: ['11:45', '17:45', '20:45'],
     img: '/images/HomeSchedule/Kit.png',
     releasedOn: '15.02.2023',
     countryFrom: 'США',

@@ -5,6 +5,19 @@ font-style: normal;
 color: #FFFFFF;
 letter-spacing: 0.0012em;
 }
+.backToTheDescBtn {
+background: none;
+display: flex;
+font-size: 12px;
+line-height: 15px;
+color: #DBDBDB;
+align-items: center;
+gap: 16px;
+margin-bottom: 32px;
+svg {
+  display: block;
+}
+}
 .film__content_title-mobile {
   font-weight: 700;
   font-size: 20px;
@@ -77,6 +90,7 @@ gap: 16px;
 }
 @media(min-width: 1024px) {
  padding-right: 108px;
+ margin-top: auto;
 }
 }
 .film__content_body {
@@ -101,6 +115,7 @@ margin-bottom: 16px;
 }
 .film__content_text-mobile-button {
   background: none;
+  padding: 5px 5px 5px 0px;
   span {  
   color: #8280FF;
   display: flex;
@@ -113,12 +128,14 @@ margin-bottom: 16px;
     clip-path: polygon(50% 100%, 0 50%, 100% 50%);
     background: #8280FF;
   }
-  &.open {
-    &::after {
-      clip-path: polygon(50% 50%, 0 100%, 100% 100%);
-
-    }
+  
+}
+&.open {
+  span {
+  &::after {
+    clip-path: polygon(50% 50%, 0 100%, 100% 100%);
   }
+}
 }
 @media(min-width: 768px) {
  display: none
@@ -163,6 +180,9 @@ line-height: 27px;
 .film__content_genre {
 }
 .film__content_actors {
+  @media(min-width: 1024px) {
+    margin-bottom: 32px;
+  }
 }
 .film__content_text {
   display: none;

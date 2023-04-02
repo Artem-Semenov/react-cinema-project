@@ -1,17 +1,23 @@
+import { Dispatch } from "@reduxjs/toolkit";
 import "./Button.scss";
+import { SetStateAction } from "react";
 
 type Props = {
   title: string;
-  clickHandler?: React.MouseEventHandler<HTMLButtonElement>;
+  clickHandler?: () => void
   trailerLink?: string;
 };
 const Button = ({ trailerLink, clickHandler, title }: Props) => {
   return (
     <>
       {trailerLink ? (
-        <button className="clickable-button" onClick={clickHandler}>{title}</button>
+        <a className="clickable-button" href={trailerLink} target="_blank">
+          {title}
+        </a>
       ) : (
-        <a className="clickable-button" href={trailerLink}>{title}</a>
+        <button className="clickable-button" onClick={clickHandler}>
+          {title}
+        </button>
       )}
     </>
   );
