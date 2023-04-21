@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import windowReducer from './windowSize'
+import selectedSeatsReducer from './selectedSeats'
 
 export const store = configureStore({
   reducer: {
-    windowSize: windowReducer
+    windowSize: windowReducer,
+    addSelectedSeats: selectedSeatsReducer
   },
 });
 

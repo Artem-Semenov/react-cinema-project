@@ -2,55 +2,51 @@ import { useState } from "react";
 import "./SeatsSelecs.scss";
 import occupiedSeatsData from "utils/occupiedSeatsData";
 import Button from "components/Button/Button";
+import { useAppDispatch, useAppSelector } from "redux/hooks";
+import { addSelectedSeats } from "redux/selectedSeats";
 
 type Props = {
   id: number;
   time: string;
 };
 
-type SelectedSeats = {
+/* type SelectedSeats = {
   ["row"]: number;
   ["seat"]: number;
-}[];
+}[]; */
+
+export const selectedSeat = (row: number, seat: number, i: number) => {
+  return (
+    <div className="selected_seats__block" key={i}>
+      <div className="selected_seats__item">{seat} місце</div>
+      <div className="selected_seats__item">{row} ряд</div>
+      <div className="selected_seats__item selected_seats__item-price">
+        150 грн
+      </div>
+    </div>
+  );
+};
+
 const SeatsSelect = ({ id, time }: Props) => {
-  const [selectedSeats, setSelectedSeats] = useState<SelectedSeats>([]);
+  const windowSize = useAppSelector((state) => state.windowSize);
+  const selectedSeats = useAppSelector((state) => state.addSelectedSeats);
+
+  const dispatch = useAppDispatch();
+  // const [selectedSeats, setSelectedSeats] = useState<SelectedSeats>([]);
 
   const handleSeatSelect = (row: number, seat: number) => {
-    setSelectedSeats((state) => {
-      let stateCopy = [...state];
-      let existingEl = state.find((el) => el.row === row && el.seat === seat);
-      let indexOfExistingEl;
-      if (existingEl) {
-        indexOfExistingEl = state.indexOf(existingEl);
-        stateCopy.splice(indexOfExistingEl, 1);
-        return stateCopy;
-      }
-
-      let result = [
-        ...state,
-        {
-          ["row"]: row,
-          ["seat"]: seat,
-        },
-      ];
-      return result;
-    });
+    dispatch(addSelectedSeats({ row, seat }));
   };
 
   console.log(selectedSeats);
-  const selectedSeat = (row: number, seat: number, i: number) => {
-    return (
-      <div key={i}>
-        <div>{seat} місце</div>
-        <div>{row} ряд</div>
-        <div>150 грн</div>
-      </div>
-    );
-  };
 
-  const buttonBlock = () => {
+ 
+
+  const buttonBlock = (zeroRightPad = false) => {
     return (
-      <div className="film__content_buttons-wrapper">
+      <div
+        className="film__content_buttons-wrapper"
+        style={zeroRightPad ? { paddingRight: "0px" } : undefined}>
         <Button title="Забронювати" />
         <Button title="Оплатити квитки" trailerLink="link" />
       </div>
@@ -72,26 +68,30 @@ const SeatsSelect = ({ id, time }: Props) => {
               style={
                 i === 1 || i === 2 ? { justifyContent: "flex-end" } : undefined
               }>
-              <span className="seatsSelect__row-index-left">{i + 1}</span>
+              <span className="seatsSelect__row-index seatsSelect__row-index-left">
+                {i + 1}
+              </span>
               {Object.values(occupiedSeatsData[id][time][el]).map((el, ind) => {
                 return (
                   <div
                     style={
                       el
-                        ? { background: "gray" }
+                        ? { background: "gray", cursor: "unset" }
                         : selectedSeats.find(
                             (el) => el.row === i + 1 && el.seat === ind + 1
                           )
                         ? { background: "#0500FF" }
                         : undefined
                     }
-                    onClick={() => handleSeatSelect(i + 1, ind + 1)}
+                    onClick={
+                      !el ? () => handleSeatSelect(i + 1, ind + 1) : undefined
+                    }
                     key={ind}
                     className="seatsSelect__seat"></div>
                 );
               })}
               <span
-                className="seatsSelect__row-index-right"
+                className="seatsSelect__row-index seatsSelect__row-index-right"
                 style={
                   i === 1 || i === 2 ? { marginLeft: "unset" } : undefined
                 }>
@@ -101,8 +101,13 @@ const SeatsSelect = ({ id, time }: Props) => {
           );
         })}
       </div>
-      {selectedSeats.map((el, i) => selectedSeat(el.row, el.seat, i))}
-      {buttonBlock()}
+      {windowSize < 768 && (
+        <div className="selected_seats__wrapper">
+          {selectedSeats.map((el, i) => selectedSeat(el.row!, el.seat!, i))}
+        </div>
+      )}
+
+      {buttonBlock(true)}
     </div>
   );
 };

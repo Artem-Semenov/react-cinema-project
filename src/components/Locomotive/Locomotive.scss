@@ -20,6 +20,7 @@ transform: rotate(-1deg);
    
   }
   .locomotive__content {
+    position: relative;
     width: calc(120vw + 20px);
     height: 80px;
     display: flex;
@@ -32,6 +33,7 @@ transform: rotate(-1deg);
     margin: 0 -10px;
   }
   .locomotive__item {
+    position: absolute;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 400;
@@ -45,4 +47,29 @@ white-space: nowrap;
 margin-right: 20px;
   }
 
-  
+  .mr-60 {
+margin-right: 60px;
+  }
+  .locomotive__item_1 {
+    animation: animate_1 50s linear infinite;
+  }
+  .locomotive__item_2 {
+    animation: animate_2 50s linear infinite;
+  }
+
+  @keyframes animate_1 {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: 3490px;
+    }
+  }
+  @keyframes animate_2 {
+    0% {
+      left: -3490px;
+    }
+    100% {
+      left: 0;
+    }
+  }

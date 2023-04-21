@@ -1,4 +1,21 @@
-const filmsData = [
+export type Film = 
+  {
+    title: string,
+      titleForDomain?: string,
+      timeArr: string[],
+      img: string,
+      releasedOn: string,
+      countryFrom: string,
+      createdBy: string,
+      genre: string[],
+      actors: string[],
+      description: string,
+      id?: number
+  
+} | undefined
+type FilmsData = Film[]
+
+const filmsData : FilmsData = [
   {
     title: 'Щедрик',
     titleForDomain: 'shedryk',
@@ -80,7 +97,7 @@ const filmsData = [
   {
     title: 'Вавилон',
     titleForDomain: 'vavylon',
-    timeArr: ['18.45', '21:30'],
+    timeArr: ['18:45', '21:30'],
     img: '/images/HomeSchedule/Vavylon.png',
     releasedOn: '15.02.2023',
     countryFrom: 'США',
@@ -99,7 +116,7 @@ const filmsData = [
     genre: ['фантастика', 'бойовик', 'пригоди', 'фентезі'],
     actors: ['Сем Вортінґтон', 'Зої Салдана', 'Кейт Вінслет', 'Мішель Єо', 'Сіґурні Вівер', 'Джованні Рібізі'],
     description: 'Історія розгортається більше ніж через десятиліття після подій першого фільму. Стрічка розповідає про сім’ю Саллі (Джейка, Нейтірі та їхніх дітей), проблеми, які їх переслідують, шлях, який вони долають, щоб захистити одне одного від небезпек, битви, які вони ведуть, щоб залишитися живими, і трагедії, які вони переживають разом.',
-    timeArr: ['21.40'],
+    timeArr: ['21:40'],
     img: '/images/HomeSchedule/Otto.png',
     id: 8
   }

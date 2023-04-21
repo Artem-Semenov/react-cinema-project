@@ -18,15 +18,20 @@ svg {
   display: block;
 }
 }
-.film__content_title-mobile {
+.film__content_title {
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   margin-bottom: 16px;
   @media(min-width: 768px) {
+    & .film__content_title-mobile {
     display: none;
   }
 }
+}
+
+
+
 
 .film__content {
 display: flex;
@@ -195,4 +200,18 @@ line-height: 27px;
 .film__content_booking-finish {
 }
 .film__content_text-mobile {
+}
+
+.film__content_short-desc {
+  margin-bottom: 16px;
+display: flex;
+flex-direction: column;
+gap: 8px;
+font-size: 16px;
+line-height: 20px;
+}
+.selected_seats__wrapper__desktop {
+  @media (min-width: 1024px) {
+    width: 32.9%;
+  }
 }

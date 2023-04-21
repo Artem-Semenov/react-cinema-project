@@ -1,8 +1,8 @@
 type OccupiedSeatsData = {
-  [id : number]: {
+  [id: number]: {
     [time: string]: {
       [row: string]: {
-        [seat: string]: boolean
+        [seat: string]: boolean;
       };
     };
   };
@@ -297,7 +297,7 @@ const occupiedSeatsData: OccupiedSeatsData = {
     },
   },
   2: {
-    "11:45": {
+    "10:00": {
       row1: {
         seat1: false,
         seat2: false,
@@ -871,7 +871,7 @@ const occupiedSeatsData: OccupiedSeatsData = {
     },
   },
   4: {
-    "11:45": {
+    "14:45": {
       row1: {
         seat1: false,
         seat2: false,
@@ -966,7 +966,7 @@ const occupiedSeatsData: OccupiedSeatsData = {
         seat10: false,
       },
     },
-    "17:45": {
+    "17:30": {
       row1: {
         seat1: false,
         seat2: false,
@@ -1158,7 +1158,7 @@ const occupiedSeatsData: OccupiedSeatsData = {
     },
   },
   5: {
-    "11:45": {
+    "11:50": {
       row1: {
         seat1: false,
         seat2: false,
@@ -1253,7 +1253,7 @@ const occupiedSeatsData: OccupiedSeatsData = {
         seat10: false,
       },
     },
-    "17:45": {
+    "19:30": {
       row1: {
         seat1: false,
         seat2: false,
@@ -1445,7 +1445,7 @@ const occupiedSeatsData: OccupiedSeatsData = {
     },
   },
   6: {
-    "11:45": {
+    "10:00": {
       row1: {
         seat1: false,
         seat2: false,
@@ -1635,7 +1635,7 @@ const occupiedSeatsData: OccupiedSeatsData = {
         seat10: false,
       },
     },
-    "20:45": {
+    "20:35": {
       row1: {
         seat1: false,
         seat2: false,
@@ -1732,7 +1732,7 @@ const occupiedSeatsData: OccupiedSeatsData = {
     },
   },
   7: {
-    "11:45": {
+    "18:45": {
       row1: {
         seat1: false,
         seat2: false,
@@ -1827,7 +1827,7 @@ const occupiedSeatsData: OccupiedSeatsData = {
         seat10: false,
       },
     },
-    "17:45": {
+    "21:30": {
       row1: {
         seat1: false,
         seat2: false,
@@ -2209,7 +2209,7 @@ const occupiedSeatsData: OccupiedSeatsData = {
         seat10: false,
       },
     },
-    "20:45": {
+    "21:40": {
       row1: {
         seat1: false,
         seat2: false,

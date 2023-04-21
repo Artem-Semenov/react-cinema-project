@@ -1,23 +1,21 @@
 import Container from "components/Container/Container";
 import { useLocation } from "react-router-dom";
-import filmsData from "utils/filmsData";
+import filmsData, { Film } from "utils/filmsData";
 import "./FilmPage.scss";
 import ScheduleTimeItem from "components/Schedule/ScheduleListItem/ScheduleTimeItem/ScheduleTimeItem";
 import Button from "components/Button/Button";
 import { useAppSelector } from "redux/hooks";
 import { useState } from "react";
-import SeatsSelect from "components/SeatsSelect/SeatsSelect";
+import SeatsSelect, { selectedSeat } from "components/SeatsSelect/SeatsSelect";
 
 type Props = {};
+
 const FilmPage = (props: Props) => {
   const windowWidth = useAppSelector((state) => state.windowSize);
   const location = useLocation();
-  const {time, id } = location.state;
+  const { time, id } = location.state;
 
-  const film = filmsData.find((el) => el.id === id);
-
-  console.log(film);
-  const {
+  let {
     countryFrom,
     createdBy,
     description,
@@ -27,7 +25,33 @@ const FilmPage = (props: Props) => {
     timeArr,
     title,
     actors,
-  } = film!;
+  }: Film = {
+    countryFrom: "",
+    createdBy: "",
+    description: "",
+    genre: [],
+    img: "",
+    releasedOn: "",
+    timeArr: [],
+    title: "",
+    actors: [],
+  };
+
+  const film: Film = filmsData.find((el) => el?.id === id);
+
+  console.log(film);
+
+  if (film) {
+    countryFrom = film.countryFrom;
+    createdBy = film.createdBy;
+    description = film.description;
+    genre = film.genre;
+    img = film.img;
+    releasedOn = film.releasedOn;
+    timeArr = film.timeArr;
+    title = film.title;
+    actors = film.actors;
+  }
 
   const timeClickHandle = () => {
     console.log(id);
@@ -45,7 +69,9 @@ const FilmPage = (props: Props) => {
       accordContent.style.height = "";
     }
   };
+
   const [openSeatsSelect, setOpenSeatsSelect] = useState(false);
+
   const timeBlock = () => {
     return (
       <div className="film__content_time">
@@ -74,7 +100,16 @@ const FilmPage = (props: Props) => {
       </div>
     );
   };
- 
+
+  const shortFilmDesc = () => (
+    <div className="film__content_short-desc">
+      <div>Місто Ужгород, 5 Елемент, зал CineMax</div>
+      <div>24 Січня, 20:35</div>
+      <div>2D</div>
+    </div>
+  );
+
+  const selectedSeats = useAppSelector((state) => state.addSelectedSeats);
   return (
     <>
       <Container>
@@ -97,23 +132,43 @@ const FilmPage = (props: Props) => {
               <span>Назад до опису</span>
             </button>
           )}
-          <div className="film__content_title-mobile">{title}</div>
-          {openSeatsSelect && <div>
-            <div>Місто Ужгород, 5 Елемент, зал CineMax</div>
-            <div>24 Січня, 20:35</div>
-            <div>2D</div>
-            </div>}
-          {openSeatsSelect && <SeatsSelect 
-          id = {id}
-          time = {time === -1 ? timeArr[0] : time}
-          />}
+          {openSeatsSelect && windowWidth < 767 && (
+            <div className="film__content_title ">{title}</div>
+          )}
+          {openSeatsSelect && windowWidth < 768 && shortFilmDesc()}
+
+          {openSeatsSelect && windowWidth < 768 && (
+            <SeatsSelect id={id} time={time === -1 ? timeArr[0] : time} />
+          )}
           <div className="film__content">
-            {!openSeatsSelect && (
+            {!openSeatsSelect && windowWidth < 768 && (
               <div className="film__content_img">
                 <img src={img} alt={title} />
               </div>
             )}
+
+            {windowWidth > 767 && (
+              <div className="film__content_img">
+                <img src={img} alt={title} />
+              </div>
+            )}
+
             <div className="film__content_body">
+              {openSeatsSelect && windowWidth > 767 && (
+                <div className="film__content_title ">{title}</div>
+              )}
+              {openSeatsSelect && windowWidth > 767 && shortFilmDesc()}
+              {openSeatsSelect && windowWidth > 767 && windowWidth < 1024 && (
+                <div className="selected_seats__wrapper">
+                  {selectedSeats.map((el, i) =>
+                    selectedSeat(el.row!, el.seat!, i)
+                  )}
+                </div>
+              )}
+
+              {openSeatsSelect && windowWidth > 1023 && (
+                <SeatsSelect id={id} time={time === -1 ? timeArr[0] : time} />
+              )}
               {windowWidth < 768 && !openSeatsSelect && timeAndButtonsBlock()}
               {!openSeatsSelect && (
                 <div className="film__content_description">
@@ -145,15 +200,23 @@ const FilmPage = (props: Props) => {
                   <div className="film__content_text">{description}</div>
                 </div>
               )}
-              {windowWidth > 767 && windowWidth < 1024
+              {!openSeatsSelect && windowWidth > 767 && windowWidth < 1024
                 ? timeAndButtonsBlock()
-                : windowWidth > 1023 
+                : windowWidth > 1023 && !openSeatsSelect
                 ? buttonBlock()
                 : ""}
               <div className="film__content_booking"></div>
               <div className="film__content_booking-finish"></div>
             </div>
           </div>
+          {windowWidth > 1023 && (
+            <div className="selected_seats__wrapper selected_seats__wrapper__desktop">
+              {selectedSeats.map((el, i) => selectedSeat(el.row!, el.seat!, i))}
+            </div>
+          )}
+          {openSeatsSelect && windowWidth > 767 && windowWidth < 1024 && (
+            <SeatsSelect id={id} time={time === -1 ? timeArr[0] : time} />
+          )}
           {!openSeatsSelect && (
             <div className="film__content_text-mobile">
               <button
