@@ -228,3 +228,18 @@ line-height: 20px;
     width: 32.9%;
   }
 }
+
+.film__slider {
+
+  @media (min-width: 1023px) {
+    margin-top: 80px;
+  }
+}
+.film__slider__title {
+  font-weight: 700;
+  @media (min-width: 1024px) {
+    font-size: 40px;
+line-height: 49px;
+margin-bottom: 40px;
+  }
+}

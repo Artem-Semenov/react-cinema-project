@@ -1,0 +1,18 @@
+.filmsSlider {
+
+.swiper-slide__body {
+display: flex;
+flex-direction: column;
+gap: 16px;
+
+img {
+  width: 100%;
+}
+.swiper-slide__title {
+text-align: center;
+font-size: 16px;
+line-height: 20px;
+}
+}
+
+}

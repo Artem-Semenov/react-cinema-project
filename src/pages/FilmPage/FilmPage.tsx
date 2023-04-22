@@ -4,11 +4,11 @@ import filmsData, { Film } from "utils/filmsData";
 import "./FilmPage.scss";
 import ScheduleTimeItem from "components/Schedule/ScheduleListItem/ScheduleTimeItem/ScheduleTimeItem";
 import Button from "components/Button/Button";
-import { useAppDispatch, useAppSelector } from "redux/hooks";
+import { useAppSelector } from "redux/hooks";
 import { useEffect, useState } from "react";
 import SeatsSelect, { selectedSeat } from "components/SeatsSelect/SeatsSelect";
-import { addSelectedSeats } from "redux/selectedSeats";
 import SvgIcon from "components/Sprite/Sprite";
+import FilmsSlider from "components/FilmsSlider/FilmsSlider";
 
 type Props = {};
 
@@ -27,7 +27,6 @@ const FilmPage = (props: Props) => {
     timeArr,
     title,
     actors,
-    titleForDomain,
   }: Film = {
     countryFrom: "",
     createdBy: "",
@@ -38,7 +37,6 @@ const FilmPage = (props: Props) => {
     timeArr: [],
     title: "",
     actors: [],
-    titleForDomain: "",
   };
 
   const film: Film = filmsData.find((el) => el?.id === id);
@@ -55,7 +53,6 @@ const FilmPage = (props: Props) => {
     timeArr = film.timeArr;
     title = film.title;
     actors = film.actors;
-    titleForDomain = film.titleForDomain;
   }
 
   const timeClickHandle = () => {
@@ -115,7 +112,6 @@ const FilmPage = (props: Props) => {
   );
 
   const selectedSeats = useAppSelector((state) => state.addSelectedSeats);
-  const dispatch = useAppDispatch();
 
   useEffect(() => {
     console.log(selectedSeats);
@@ -230,6 +226,11 @@ const FilmPage = (props: Props) => {
               </div>
             </div>
           )}
+
+          <div className="film__slider">
+            <div className="film__slider__title">Популярні кіно</div>
+            <FilmsSlider/>
+          </div>
         </div>
       </Container>
     </>
