@@ -24,8 +24,8 @@ export const selectedSeatsSlice = createSlice({
       let result = [
         ...state,
         {
-          ["row"]: action.payload.row,
-          ["seat"]: action.payload.seat,
+          "row": action.payload.row,
+          "seat": action.payload.seat,
         },
       ];
       return result;

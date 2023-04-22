@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./SeatsSelecs.scss";
 import occupiedSeatsData from "utils/occupiedSeatsData";
 import Button from "components/Button/Button";
