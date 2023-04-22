@@ -44,8 +44,7 @@ const SeatsSelect = ({ id, time }: Props) => {
   const buttonBlock = (openSeatSelectState = false) => {
     return (
       <div
-        className="film__content_buttons-wrapper"
-        style={openSeatSelectState ? { paddingRight: "0px", margin: '0 -155px' } : undefined}>
+        className={`film__content_buttons-wrapper ${openSeatSelectState ? 'film__content_buttons-wrapper_longed' : ''}`}>
         <Button title="Забронювати" />
         <Button title="Оплатити квитки" trailerLink="link" />
       </div>

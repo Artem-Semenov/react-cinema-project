@@ -111,6 +111,14 @@ gap: 16px;
  margin-top: auto;
 }
 }
+.film__content_buttons-wrapper_longed {
+
+  @media (min-width: 1024px)  {
+    padding-right: 0;
+    margin: 0 -155px;
+  }
+
+}
 .film__content_body {
   display: flex;
   flex-direction: column;
@@ -237,6 +245,18 @@ line-height: 20px;
 }
 .film__slider__title {
   font-weight: 700;
+
+  margin-top: 20px;
+  margin-bottom: 8px;
+
+
+  @media (min-width: 768px) {
+    font-size: 32px;
+    line-height: 39px;
+    margin-bottom: 16px;
+    margin-top: 40xp;
+  }
+
   @media (min-width: 1024px) {
     font-size: 40px;
 line-height: 49px;
