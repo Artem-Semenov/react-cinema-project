@@ -1,32 +1,41 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import filmsData from "utils/filmsData";
-import './FilmsSlider.scss'
+import "./FilmsSlider.scss";
 
 type Props = {};
 const FilmsSlider = (props: Props) => {
   return (
     <Swiper
-      spaceBetween={24}
-      slidesPerView={4}
+      className="filmsSlider"
       speed={800}
       loop={true}
-      // touchRatio={1.5}
-      // navigation={true}
       effect={"flip"}
       // pagination={{clickable: true }}
-      autoplay={true}
-      
-      className="filmsSlider">
-
-        {filmsData.map((el) => (
-          <SwiperSlide key={el?.id}>
-            <div className="swiper-slide__body">
+      grabCursor={true}
+      autoplay={{ delay: 1000 }}
+      breakpoints={{
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 24,
+        },
+      }}>
+      {filmsData.map((el) => (
+        <SwiperSlide key={el?.id}>
+          <div className="swiper-slide__body">
             <img src={el?.img} alt={el?.title} />
             <h2 className="swiper-slide__title">{el?.title}</h2>
-            </div>
-          </SwiperSlide>
-        ))}
+          </div>
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };
