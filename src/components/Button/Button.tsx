@@ -1,6 +1,4 @@
-import { Dispatch } from "@reduxjs/toolkit";
 import "./Button.scss";
-import { SetStateAction } from "react";
 
 type Props = {
   title: string;
@@ -11,7 +9,7 @@ const Button = ({ trailerLink, clickHandler, title }: Props) => {
   return (
     <>
       {trailerLink ? (
-        <a className="clickable-button" href={trailerLink} target="_blank">
+        <a className="clickable-button" href={trailerLink} target="_blank" rel="noreferrer">
           {title}
         </a>
       ) : (
