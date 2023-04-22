@@ -1,5 +1,6 @@
 import Container from "components/Container/Container";
 import "./Footer.scss";
+import { NavLink } from "react-router-dom";
 type Props = {};
 const Footer = (props: Props) => {
   return (
@@ -13,22 +14,24 @@ const Footer = (props: Props) => {
           <nav className="footer__navigation">
             <ul>
               <li>
-                <button>Головна</button>
+              <NavLink to={"/"}>Головна</NavLink>
               </li>
               <li>
-                <button>Розклад</button>
+              <NavLink to={"/schedule"}>
+                  Розклад
+                </NavLink>
               </li>
               <li>
-                <button>Дітям</button>
+              <NavLink to={"/for-kids"}>Дітям</NavLink>
               </li>
               <li>
-                <button>3D Панорама</button>
+              <NavLink to={"/3d"}>3D Панорама</NavLink>
               </li>
               <li>
-                <button>Ігротека</button>
+              <NavLink to={"/game-center"}>Ігротека</NavLink>
               </li>
               <li>
-                <button>Burger CIty</button>
+              <NavLink to={"/burger-city"}>Burger CIty</NavLink>
               </li>
             </ul>
           </nav>

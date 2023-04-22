@@ -1,12 +1,14 @@
 import Container from "components/Container/Container";
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import filmsData, { Film } from "utils/filmsData";
 import "./FilmPage.scss";
 import ScheduleTimeItem from "components/Schedule/ScheduleListItem/ScheduleTimeItem/ScheduleTimeItem";
 import Button from "components/Button/Button";
-import { useAppSelector } from "redux/hooks";
-import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "redux/hooks";
+import { useEffect, useState } from "react";
 import SeatsSelect, { selectedSeat } from "components/SeatsSelect/SeatsSelect";
+import { addSelectedSeats } from "redux/selectedSeats";
+import SvgIcon from "components/Sprite/Sprite";
 
 type Props = {};
 
@@ -25,6 +27,7 @@ const FilmPage = (props: Props) => {
     timeArr,
     title,
     actors,
+    titleForDomain,
   }: Film = {
     countryFrom: "",
     createdBy: "",
@@ -35,6 +38,7 @@ const FilmPage = (props: Props) => {
     timeArr: [],
     title: "",
     actors: [],
+    titleForDomain: "",
   };
 
   const film: Film = filmsData.find((el) => el?.id === id);
@@ -51,6 +55,7 @@ const FilmPage = (props: Props) => {
     timeArr = film.timeArr;
     title = film.title;
     actors = film.actors;
+    titleForDomain = film.titleForDomain;
   }
 
   const timeClickHandle = () => {
@@ -110,33 +115,26 @@ const FilmPage = (props: Props) => {
   );
 
   const selectedSeats = useAppSelector((state) => state.addSelectedSeats);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    console.log(selectedSeats);
+  });
+
   return (
     <>
       <Container>
         <div className="film__wrapper">
-          {openSeatsSelect && (
-            <button
-              className="backToTheDescBtn"
-              onClick={() => setOpenSeatsSelect(false)}>
-              <svg
-                width="6"
-                height="9"
-                viewBox="0 0 6 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M5.01686 0.692228C4.96866 0.646192 4.9114 0.609667 4.84837 0.584746C4.78533 0.559825 4.71776 0.546997 4.64951 0.546997C4.58126 0.546997 4.51368 0.559825 4.45065 0.584746C4.38761 0.609667 4.33036 0.646192 4.28216 0.692228L0.79131 4.01814C0.752831 4.05472 0.722302 4.09818 0.701473 4.14602C0.680643 4.19386 0.669922 4.24515 0.669922 4.29694C0.669922 4.34874 0.680643 4.40002 0.701473 4.44787C0.722302 4.49571 0.752831 4.53916 0.79131 4.57575L4.28216 7.90166C4.48555 8.09544 4.81347 8.09544 5.01686 7.90166C5.22025 7.70788 5.22025 7.39546 5.01686 7.20168L1.97015 4.29892L5.02101 1.39221C5.22025 1.19843 5.22025 0.886008 5.01686 0.692228Z"
-                  fill="white"
-                />
-              </svg>
-              <span>Назад до опису</span>
-            </button>
-          )}
+          <div className="film__wrapper_breadCrumbs">
+            <SvgIcon iconName="arrow-back-left" />
+            <NavLink to="/schedule">Розклад</NavLink>/
+            <button onClick={() => setOpenSeatsSelect(false)}>{title}</button>
+            {openSeatsSelect && <>/<span>Бронювання</span></>}
+          </div>
           {openSeatsSelect && windowWidth < 767 && (
             <div className="film__content_title ">{title}</div>
           )}
           {openSeatsSelect && windowWidth < 768 && shortFilmDesc()}
-
           {openSeatsSelect && windowWidth < 768 && (
             <SeatsSelect id={id} time={time === -1 ? timeArr[0] : time} />
           )}
@@ -209,7 +207,7 @@ const FilmPage = (props: Props) => {
               <div className="film__content_booking-finish"></div>
             </div>
           </div>
-          {windowWidth > 1023 && (
+          {windowWidth > 1023 && openSeatsSelect && (
             <div className="selected_seats__wrapper selected_seats__wrapper__desktop">
               {selectedSeats.map((el, i) => selectedSeat(el.row!, el.seat!, i))}
             </div>

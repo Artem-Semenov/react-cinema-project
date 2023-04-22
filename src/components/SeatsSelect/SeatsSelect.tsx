@@ -41,11 +41,11 @@ const SeatsSelect = ({ id, time }: Props) => {
 
  
 
-  const buttonBlock = (zeroRightPad = false) => {
+  const buttonBlock = (openSeatSelectState = false) => {
     return (
       <div
         className="film__content_buttons-wrapper"
-        style={zeroRightPad ? { paddingRight: "0px" } : undefined}>
+        style={openSeatSelectState ? { paddingRight: "0px", margin: '0 -155px' } : undefined}>
         <Button title="Забронювати" />
         <Button title="Оплатити квитки" trailerLink="link" />
       </div>
