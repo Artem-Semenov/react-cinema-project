@@ -5,7 +5,7 @@ import "./FilmPage.scss";
 import ScheduleTimeItem from "components/Schedule/ScheduleListItem/ScheduleTimeItem/ScheduleTimeItem";
 import Button from "components/Button/Button";
 import { useAppSelector } from "redux/hooks";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SeatsSelect, { selectedSeat } from "components/SeatsSelect/SeatsSelect";
 import SvgIcon from "components/Sprite/Sprite";
 import FilmsSlider from "components/FilmsSlider/FilmsSlider";
@@ -112,10 +112,6 @@ const FilmPage = (props: Props) => {
   );
 
   const selectedSeats = useAppSelector((state) => state.addSelectedSeats);
-
-  useEffect(() => {
-    console.log(selectedSeats);
-  });
 
   return (
     <>
