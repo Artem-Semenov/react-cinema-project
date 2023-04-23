@@ -5,6 +5,7 @@
   @media (min-width: 768px) {
     margin-top: 20px;
   }
+
 }
 .seatsSelect__titlle {
 position: relative;
@@ -78,4 +79,8 @@ line-height: 20px;
 .selected_seats__item-price {
   background-color: rgba(189, 0, 255, 0.4);
   border-color: rgba(189, 0, 255, 0.4);
+}
+.film__content_buttons_desc {
+  font-size: 12px;
+line-height: 15px;
 }

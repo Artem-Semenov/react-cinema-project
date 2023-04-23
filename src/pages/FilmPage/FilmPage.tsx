@@ -4,18 +4,28 @@ import filmsData, { Film } from "utils/filmsData";
 import "./FilmPage.scss";
 import ScheduleTimeItem from "components/Schedule/ScheduleListItem/ScheduleTimeItem/ScheduleTimeItem";
 import Button from "components/Button/Button";
-import { useAppSelector } from "redux/hooks";
-import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "redux/hooks";
+import { useEffect, useState } from "react";
 import SeatsSelect, { selectedSeat } from "components/SeatsSelect/SeatsSelect";
 import SvgIcon from "components/Sprite/Sprite";
 import FilmsSlider from "components/FilmsSlider/FilmsSlider";
+import { addSelectedSeats } from "redux/selectedSeats";
 
 type Props = {};
 
 const FilmPage = (props: Props) => {
   const windowWidth = useAppSelector((state) => state.windowSize);
   const location = useLocation();
+  const dispatch = useAppDispatch();
+
   const { time, id } = location.state;
+  const { pathname } = location;
+  const [openSeatsSelect, setOpenSeatsSelect] = useState(false);
+
+  useEffect(() => {
+    dispatch(addSelectedSeats([]));
+    setOpenSeatsSelect(false);
+  }, [pathname]);
 
   let {
     countryFrom,
@@ -72,8 +82,6 @@ const FilmPage = (props: Props) => {
     }
   };
 
-  const [openSeatsSelect, setOpenSeatsSelect] = useState(false);
-
   const timeBlock = () => {
     return (
       <div className="film__content_time">
@@ -121,7 +129,11 @@ const FilmPage = (props: Props) => {
             <SvgIcon iconName="arrow-back-left" />
             <NavLink to="/schedule">Розклад</NavLink>/
             <button onClick={() => setOpenSeatsSelect(false)}>{title}</button>
-            {openSeatsSelect && <>/<span>Бронювання</span></>}
+            {openSeatsSelect && (
+              <>
+                /<span>Бронювання</span>
+              </>
+            )}
           </div>
           {openSeatsSelect && windowWidth < 767 && (
             <div className="film__content_title ">{title}</div>
@@ -225,7 +237,7 @@ const FilmPage = (props: Props) => {
 
           <div className="film__slider">
             <div className="film__slider__title">Популярні кіно</div>
-            <FilmsSlider/>
+            <FilmsSlider />
           </div>
         </div>
       </Container>

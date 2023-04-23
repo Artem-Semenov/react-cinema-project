@@ -3,17 +3,20 @@ import { createSlice } from "@reduxjs/toolkit";
 type SelectedSeats = {
   ["row"]?: number;
   ["seat"]?: number;
-}[];
+};
 
-const initialSelectedSeats:SelectedSeats = [];
+const initialSelectedSeats: SelectedSeats[] = [];
 
 export const selectedSeatsSlice = createSlice({
-  name: 'selectedSeats',
+  name: "selectedSeats",
   initialState: initialSelectedSeats,
   reducers: {
     addSelectedSeats: (state, action) => {
       let stateCopy = [...state];
-      let existingEl = state.find((el) => el.row === action.payload.row && el.seat === action.payload.seat);
+      if (action.payload.length === 0) return [];
+      let existingEl = state.find(
+        (el) => el.row === action.payload.row && el.seat === action.payload.seat
+      );
       let indexOfExistingEl;
       if (existingEl) {
         indexOfExistingEl = state.indexOf(existingEl);
@@ -24,15 +27,14 @@ export const selectedSeatsSlice = createSlice({
       let result = [
         ...state,
         {
-          "row": action.payload.row,
-          "seat": action.payload.seat,
+          row: action.payload.row,
+          seat: action.payload.seat,
         },
       ];
       return result;
-    }
-    
-  }
-})
+    },
+  },
+});
 
-export const {addSelectedSeats} = selectedSeatsSlice.actions
-export default selectedSeatsSlice.reducer
+export const { addSelectedSeats } = selectedSeatsSlice.actions;
+export default selectedSeatsSlice.reducer;

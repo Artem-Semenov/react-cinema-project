@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import filmsData from "utils/filmsData";
 import "./FilmsSlider.scss";
+import { NavLink } from "react-router-dom";
 
 type Props = {};
 const FilmsSlider = (props: Props) => {
@@ -31,8 +32,10 @@ const FilmsSlider = (props: Props) => {
       {filmsData.map((el) => (
         <SwiperSlide key={el?.id}>
           <div className="swiper-slide__body">
-            <img src={el?.img} alt={el?.title} />
-            <h2 className="swiper-slide__title">{el?.title}</h2>
+            <NavLink to={`/schedule/${el?.titleForDomain}`} state={{ time: -1, id: el?.id}}>
+              <img src={el?.img} alt={el?.title} />
+              <h2 className="swiper-slide__title">{el?.title}</h2>
+            </NavLink>
           </div>
         </SwiperSlide>
       ))}

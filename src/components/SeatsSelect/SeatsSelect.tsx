@@ -39,15 +39,20 @@ const SeatsSelect = ({ id, time }: Props) => {
 
   console.log(selectedSeats);
 
- 
-
   const buttonBlock = (openSeatSelectState = false) => {
     return (
-      <div
-        className={`film__content_buttons-wrapper ${openSeatSelectState ? 'film__content_buttons-wrapper_longed' : ''}`}>
-        <Button title="Забронювати" />
-        <Button title="Оплатити квитки" trailerLink="link" />
-      </div>
+      <>
+        <div
+          className={`film__content_buttons-wrapper ${
+            openSeatSelectState ? "film__content_buttons-wrapper_longed" : ""
+          }`}>
+          <Button title="Забронювати" />
+          <Button title="Оплатити квитки" trailerLink="link" />
+        </div>
+      {/*   <p className={`film__content_buttons_desc ${
+            openSeatSelectState ? "film__content_buttons-wrapper_longed" : ""
+          }`}> *Бронь автоматично знімається за пів години до <br hidden={windowSize > 767 && windowSize < 1024 ? false : true}/> сеансу</p> */}
+      </>
     );
   };
 

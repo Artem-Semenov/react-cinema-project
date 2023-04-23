@@ -13,7 +13,7 @@ const ScheduleTimeItem = ({ time, titleForDomain, id, clickHandle }: Props) => {
   return (
     <div className="schedule-list-time__item" onClick={onLinkClick}>
       {titleForDomain ? (
-        <NavLink to={`schedule/${titleForDomain}`} state={{ time, id }}>
+        <NavLink to={`/schedule/${titleForDomain}`} state={{ time, id }}>
           {time}
         </NavLink>
       ) : (

@@ -7,8 +7,9 @@ import { Routes, Route } from "react-router-dom";
 import SchedulePage from "pages/SchedulePage/SchedulePage";
 import FilmPage from "pages/FilmPage/FilmPage";
 import { useAppDispatch } from "redux/hooks";
-import {windowSize} from "redux/windowSize";
+import { windowSize } from "redux/windowSize";
 import { useEffect } from "react";
+import ScrollToTop from "components/ScrollToTop/ScrollToTop";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -18,8 +19,7 @@ function App() {
     window.addEventListener("resize", () => {
       dispatch(windowSize(window.innerWidth));
     });
-  })
- 
+  });
 
   return (
     <>
@@ -36,6 +36,7 @@ function App() {
       </Routes>
       <Footer />
       <PageScrollIndicator />
+      <ScrollToTop />
     </>
   );
 }
