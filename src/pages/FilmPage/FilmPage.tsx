@@ -23,9 +23,11 @@ const FilmPage = (props: Props) => {
   const [openSeatsSelect, setOpenSeatsSelect] = useState(false);
 
   useEffect(() => {
+
     dispatch(addSelectedSeats([]));
     setOpenSeatsSelect(false);
-  }, [pathname]);
+  }, [dispatch, pathname]);
+
 
   let {
     countryFrom,
