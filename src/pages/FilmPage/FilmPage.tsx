@@ -33,7 +33,7 @@ const FilmPage = (props: Props) => {
   }, [dispatch, pathname]);
 
   ////
-  useEffect(() => {
+  /* useEffect(() => {
     axios
       .get(
         "http://localhost:1337/api/moovies?populate[seats_available][filters][dateTime][$eq]=2023-03-26T21:00:00.000Z"
@@ -42,7 +42,7 @@ const FilmPage = (props: Props) => {
       .catch((er) => console.log(er));
   }, []);
 
-  console.log(testData);
+  console.log(testData); */
 
   ////
 
