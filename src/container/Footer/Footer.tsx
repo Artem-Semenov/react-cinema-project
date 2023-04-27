@@ -1,13 +1,14 @@
 import Container from "components/Container/Container";
 import "./Footer.scss";
 import { NavLink } from "react-router-dom";
+import { smoothScroll } from "utils/helpers/smoothScroll";
 type Props = {};
 const Footer = (props: Props) => {
   return (
     <div className="footer__bg">
       <Container>
         <div className="footer__content" id="footer">
-          <div className="logo">
+          <div className="logo" onClick={() => smoothScroll("pageTop") }>
             <div>CINEPLEX</div>
             <div>5th ELEMENT</div>
           </div>

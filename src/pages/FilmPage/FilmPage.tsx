@@ -10,6 +10,7 @@ import SeatsSelect, { selectedSeat } from "components/SeatsSelect/SeatsSelect";
 import SvgIcon from "components/Sprite/Sprite";
 import FilmsSlider from "components/FilmsSlider/FilmsSlider";
 import { addSelectedSeats } from "redux/selectedSeats";
+import axios from "axios";
 
 type Props = {};
 
@@ -22,12 +23,28 @@ const FilmPage = (props: Props) => {
   const { pathname } = location;
   const [openSeatsSelect, setOpenSeatsSelect] = useState(false);
 
-  useEffect(() => {
+  //
+  const [testData, setTestData] = useState(null);
+  //
 
+  useEffect(() => {
     dispatch(addSelectedSeats([]));
     setOpenSeatsSelect(false);
   }, [dispatch, pathname]);
 
+  ////
+  useEffect(() => {
+    axios
+      .get(
+        "http://localhost:1337/api/moovies?populate[seats_available][filters][dateTime][$eq]=2023-03-26T21:00:00.000Z"
+      )
+      .then((res) => setTestData(res.data.data))
+      .catch((er) => console.log(er));
+  }, []);
+
+  console.log(testData);
+
+  ////
 
   let {
     countryFrom,

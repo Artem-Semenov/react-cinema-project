@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
 import "swiper/swiper-bundle.min.css";
 import filmsData from "utils/filmsData";
 import "./FilmsSlider.scss";
@@ -9,12 +10,13 @@ const FilmsSlider = (props: Props) => {
   return (
     <Swiper
       className="filmsSlider"
+      modules={[Autoplay]}
       speed={800}
       loop={true}
       effect={"flip"}
       // pagination={{clickable: true }}
       grabCursor={true}
-      autoplay={{ delay: 1000 }}
+      autoplay={{ delay: 3000 }}
       breakpoints={{
         320: {
           slidesPerView: 2,
