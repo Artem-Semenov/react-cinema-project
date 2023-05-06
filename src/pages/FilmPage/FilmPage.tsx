@@ -32,21 +32,9 @@ const FilmPage = (props: Props) => {
     setOpenSeatsSelect(false);
   }, [dispatch, pathname]);
 
-  ////
-  /* useEffect(() => {
-    axios
-      .get(
-        "http://localhost:1337/api/moovies?populate[seats_available][filters][dateTime][$eq]=2023-03-26T21:00:00.000Z"
-      )
-      .then((res) => setTestData(res.data.data))
-      .catch((er) => console.log(er));
-  }, []);
+  const film: Film = filmsData.find((el) => el.id === id)!;
 
-  console.log(testData); */
-
-  ////
-
-  let {
+  const {
     countryFrom,
     createdBy,
     description,
@@ -56,33 +44,7 @@ const FilmPage = (props: Props) => {
     timeArr,
     title,
     actors,
-  }: Film = {
-    countryFrom: "",
-    createdBy: "",
-    description: "",
-    genre: [],
-    img: "",
-    releasedOn: "",
-    timeArr: [],
-    title: "",
-    actors: [],
-  };
-
-  const film: Film = filmsData.find((el) => el?.id === id);
-
-  console.log(film);
-
-  if (film) {
-    countryFrom = film.countryFrom;
-    createdBy = film.createdBy;
-    description = film.description;
-    genre = film.genre;
-    img = film.img;
-    releasedOn = film.releasedOn;
-    timeArr = film.timeArr;
-    title = film.title;
-    actors = film.actors;
-  }
+  } = film;
 
   const timeClickHandle = () => {
     console.log(id);

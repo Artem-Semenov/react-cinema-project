@@ -1,13 +1,8 @@
+import { Film } from "utils/filmsData";
 import ScheduleListItem from "../ScheduleListItem/ScheduleListItem";
 import "./ScheduleList.scss";
 type Itemprops = {
-  items: Array<{
-    id: number;
-    img: string;
-    timeArr: Array<string>;
-    title: string;
-    titleForDomain: string;
-  }>;
+  items: Array<Film>;
 };
 
 const ScheduleList = ({ items }: Itemprops) => {

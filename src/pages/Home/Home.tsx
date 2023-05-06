@@ -3,17 +3,9 @@ import HomeTitlePage from "components/HomeTitlePage/HomeTitlePage";
 import Schedule from "components/Schedule/Schedule";
 import WhereWeLocated from "components/WhereWeLocated/WhereWeLocated";
 import WhyUs from "components/WhyUs/WhyUs";
-import homePageSchedule from "utils/homePageSchedule";
+import filmsData, { Film } from "utils/filmsData";
 
 type Props = {};
-
-type Itemprops = {
-  id: number;
-  img: string;
-  timeArr: Array<string>;
-  title: string;
-  titleForDomain: string;
-};
 
 type ScheduleProps = {
   shouldRenderTitle?: boolean;
@@ -21,7 +13,7 @@ type ScheduleProps = {
   title?: string;
   dateFrom: string;
   dateTo: string;
-  items: Array<Itemprops>;
+  items: Array<Film>;
 };
 const scheduleProps: ScheduleProps = {
   shouldRenderTitle: true,
@@ -29,7 +21,7 @@ const scheduleProps: ScheduleProps = {
   title: "Розклад",
   dateFrom: "19.01",
   dateTo: "25.01",
-  items: homePageSchedule,
+  items: filmsData,
 };
 const Home = (props: Props) => {
   return (

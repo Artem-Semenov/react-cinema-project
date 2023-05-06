@@ -10,6 +10,9 @@ import { useAppDispatch } from "redux/hooks";
 import { windowSize } from "redux/windowSize";
 import { useEffect } from "react";
 import ScrollToTop from "components/ScrollToTop/ScrollToTop";
+import InDevelopment from "pages/InDevelopment/InDevelopment";
+import ForKids from "pages/ForKids/ForKids";
+import Contacts from "pages/Contacts/Contacts";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -27,11 +30,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/schedule" element={<SchedulePage />}></Route>
-        <Route path="/for-kids" element={<SchedulePage />}></Route>
-        <Route path="/3d" element={<SchedulePage />}></Route>
-        <Route path="/game-center" element={<SchedulePage />}></Route>
-        <Route path="/burger-city" element={<SchedulePage />}></Route>
-        <Route path="/contacts" element={<SchedulePage />}></Route>
+        <Route path="/for-kids" element={<ForKids/>}></Route>
+        <Route path="/3d" element={<InDevelopment />}></Route>
+        <Route path="/game-center" element={<InDevelopment />}></Route>
+        <Route path="/burger-city" element={<InDevelopment />}></Route>
+        <Route path="/contacts" element={<Contacts/>}></Route>
         <Route path="/schedule/:id" element={<FilmPage />}></Route>
       </Routes>
       <Footer />

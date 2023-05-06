@@ -1,7 +1,7 @@
 import Container from "components/Container/Container";
 import Schedule from "components/Schedule/Schedule";
-import homePageSchedule from "utils/homePageSchedule";
 import "./SchedulePage.scss"
+import filmsData, { Film } from "utils/filmsData";
 
 type Props = {};
 type ScheduleProps = {
@@ -10,18 +10,10 @@ type ScheduleProps = {
   title?: string;
   dateFrom: string;
   dateTo: string;
-  items: Array<Itemprops>;
+  items: Array<Film>;
   classNames: string;
   shouldRenderDesc?: boolean;
   scheduleDesc?: string;
-};
-
-type Itemprops = {
-  id: number;
-  img: string;
-  timeArr: Array<string>;
-  title: string;
-  titleForDomain: string;
 };
 
 const schedulePropsWatchNow: ScheduleProps = {
@@ -30,7 +22,7 @@ const schedulePropsWatchNow: ScheduleProps = {
   title: "Дивіться зараз",
   dateFrom: "19.01",
   dateTo: "25.01",
-  items: homePageSchedule,
+  items: filmsData,
   classNames: "mb-40 schedulePage",
 };
 const schedulePropsWatchNextWeek: ScheduleProps = {
@@ -39,7 +31,7 @@ const schedulePropsWatchNextWeek: ScheduleProps = {
   title: "Дивіться зараз",
   dateFrom: "19.01",
   dateTo: "25.01",
-  items: homePageSchedule,
+  items: filmsData,
   classNames: "mb-80 schedulePage",
 };
 const schedulePropsWatchClose: ScheduleProps = {
@@ -48,7 +40,7 @@ const schedulePropsWatchClose: ScheduleProps = {
   title: "Незабаром у прокаті",
   dateFrom: "19.01",
   dateTo: "25.01",
-  items: homePageSchedule,
+  items: filmsData,
   classNames: "mb-80 schedulePage title-margin",
   shouldRenderDesc: true,
   scheduleDesc:

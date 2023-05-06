@@ -1,26 +1,19 @@
+import { Film } from "utils/filmsData";
 import "./Schedule.scss";
 import ScheduleList from "./ScheduleList/ScheduleList";
 
-type ScheduleProps = {
+export type ScheduleProps = {
   props: {
     shouldRenderTitle?: boolean;
     shouldRenderDate?: boolean;
     title?: string;
     dateFrom: string;
     dateTo: string;
-    items: Array<Itemprops>;
+    items: Array<Film>;
     classNames?: string;
     shouldRenderDesc?: boolean
     scheduleDesc?: string
   };
-};
-
-type Itemprops = {
-  id: number;
-  img: string;
-  timeArr: Array<string>;
-  title: string;
-  titleForDomain: string;
 };
 
 const Schedule = ({
