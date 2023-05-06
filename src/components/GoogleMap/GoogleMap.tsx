@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 
-interface MapProps {
-  apiKey: string;
-}
-
 declare global {
   interface Window {
     google: any;
   }
 }
 
-const Map: React.FC<MapProps> = ({ apiKey }) => {
+const Map: React.FC = () => {
   const [windowWidth, setWindwoWidth] = useState<number>(window.innerWidth);
-
+  const apiKey = "AIzaSyDOuxr5zhrFVF5-7I7Yi6mXMxg3p0OhSoo" ;
   const onResize = () => {
     setWindwoWidth(window.innerWidth);
   }

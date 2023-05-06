@@ -10,7 +10,6 @@ import SeatsSelect, { selectedSeat } from "components/SeatsSelect/SeatsSelect";
 import SvgIcon from "components/Sprite/Sprite";
 import FilmsSlider from "components/FilmsSlider/FilmsSlider";
 import { addSelectedSeats } from "redux/selectedSeats";
-import axios from "axios";
 
 type Props = {};
 
@@ -22,10 +21,6 @@ const FilmPage = (props: Props) => {
   const { time, id } = location.state;
   const { pathname } = location;
   const [openSeatsSelect, setOpenSeatsSelect] = useState(false);
-
-  //
-  const [testData, setTestData] = useState(null);
-  //
 
   useEffect(() => {
     dispatch(addSelectedSeats([]));

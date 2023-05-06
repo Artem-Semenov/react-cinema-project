@@ -1,0 +1,43 @@
+.map {
+  margin-bottom: 20px;
+
+  @media (min-width: 768px) {
+    height: 400px;
+    margin-bottom: 40px;
+  }
+
+}
+.desc {
+  padding-top: 20px;
+  color: #fff;
+  font-family: "Montserrat";
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 5px;
+  line-height: 20px;
+  a {
+    color: #fff;
+    background: transparent;
+    &:hover {
+      color: #EBB3FF;
+    }
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  & :last-child {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 20px;
+  line-height: 30px;
+
+    h2 {
+      font-size: 30px;
+    }
+  }
+}

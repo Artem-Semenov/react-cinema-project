@@ -8,7 +8,7 @@ const WhereWeLocated = (props: Props) => {
       <h2 className="where-we-located__title">Де ми знаходимось?</h2>
       <div className="where-we-located__content">
         <div className="map_block">
-          <Map apiKey="AIzaSyDOuxr5zhrFVF5-7I7Yi6mXMxg3p0OhSoo" />
+          <Map/>
           <p>
             Адрес: вулиця Легоцького, 19а, Ужгород, Закарпатська область, 88000
           </p>

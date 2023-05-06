@@ -48,7 +48,7 @@ const Footer = (props: Props) => {
                 </a>
               </li>
               <li>
-                <a href="https://goo.gl/maps/qZFtA9VHWVaCiuQv6">
+                <a href="https://goo.gl/maps/qZFtA9VHWVaCiuQv6" target="_blank">
                   Адрес: вулиця Легоцького, 19а, Ужгород
                 </a>
               </li>
