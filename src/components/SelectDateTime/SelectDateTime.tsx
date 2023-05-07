@@ -1,4 +1,4 @@
-import { MouseEventHandler, useState } from "react";
+import { MouseEventHandler } from "react";
 import styles from "./SelectDateTime.module.scss";
 import SvgIcon from "components/Sprite/Sprite";
 
