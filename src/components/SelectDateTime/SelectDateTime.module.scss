@@ -1,0 +1,66 @@
+.wrapper {
+display: flex;
+margin-left: auto;
+gap: 24px;
+font-family: 'Montserrat';
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+color: #FFFFFF;
+width: 190px;
+height: 29px;
+position: relative;
+}
+.date {
+  position: absolute;
+display: flex;
+flex-direction: column;
+border: 1px solid white;
+height: 29px;
+transition: height ease .3s;
+overflow: hidden;
+cursor: pointer;
+&.open {
+  .dateDisplayWrapper {
+  .svg {
+    svg {
+    transform: rotate(180deg);
+  }}
+}
+}
+} 
+
+.dateDisplayWrapper {
+  display: flex;
+  position: relative;
+  .dateDisplay {
+
+    ul {
+      display: flex;
+      flex-direction: column;
+li {
+  padding: 4px 32px 4px 7px;
+  &:first-child {
+    border-bottom: 1px solid white;
+  }
+
+}
+    }
+  }
+  .svg {
+    position: absolute;
+    right: 0;
+    height: 29px;
+    padding: 3px 5px 0 5px;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+svg {
+transition: all ease .3s;
+  
+}
+  }
+}
+
+.timeStyle {
+
+}

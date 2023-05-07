@@ -10,6 +10,7 @@ import SeatsSelect, { selectedSeat } from "components/SeatsSelect/SeatsSelect";
 import SvgIcon from "components/Sprite/Sprite";
 import FilmsSlider from "components/FilmsSlider/FilmsSlider";
 import { addSelectedSeats } from "redux/selectedSeats";
+import SelectDateTime from "components/SelectDateTime/SelectDateTime";
 
 type Props = {};
 
@@ -41,8 +42,13 @@ const FilmPage = (props: Props) => {
     actors,
   } = film;
 
+  const [selectedTime, setSelectedTime] = useState(timeArr[0]);
+
+  console.log(selectedTime);
+
   const timeClickHandle = () => {
     console.log(id);
+    setOpenSeatsSelect(true);
   };
 
   const accordOpenBtnClick = (e: React.MouseEvent) => {
@@ -112,7 +118,9 @@ const FilmPage = (props: Props) => {
             )}
           </div>
           {openSeatsSelect && windowWidth < 767 && (
-            <div className="film__content_title ">{title}</div>
+            <div className="film__content_title_wrapper ">
+              <div>{title}</div>
+            </div>
           )}
           {openSeatsSelect && windowWidth < 768 && shortFilmDesc()}
           {openSeatsSelect && windowWidth < 768 && (
@@ -133,7 +141,13 @@ const FilmPage = (props: Props) => {
 
             <div className="film__content_body">
               {openSeatsSelect && windowWidth > 767 && (
-                <div className="film__content_title ">{title}</div>
+                <div className="film__content_title_wrapper ">
+                  <div>{title}</div>
+                  <SelectDateTime
+                    timeArr={timeArr}
+                    setTimeFunc={(time: string) => setSelectedTime(time)}
+                  />
+                </div>
               )}
               {openSeatsSelect && windowWidth > 767 && shortFilmDesc()}
               {openSeatsSelect && windowWidth > 767 && windowWidth < 1024 && (
@@ -145,12 +159,19 @@ const FilmPage = (props: Props) => {
               )}
 
               {openSeatsSelect && windowWidth > 1023 && (
-                <SeatsSelect id={id} time={time === -1 ? timeArr[0] : time} />
+                <SeatsSelect
+                  id={id}
+                  time={
+                    timeArr.includes(selectedTime) ? selectedTime : timeArr[0]
+                  }
+                />
               )}
               {windowWidth < 768 && !openSeatsSelect && timeAndButtonsBlock()}
               {!openSeatsSelect && (
                 <div className="film__content_description">
-                  <div className="film__content_title">{title}</div>
+                  <div className="film__content_title_wrapper ">
+                    <div>{title}</div>
+                  </div>
                   {windowWidth > 1023 ? timeBlock() : ""}
                   <div className="film__content_releasedOn">
                     У прокаті з {releasedOn}

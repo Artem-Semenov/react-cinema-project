@@ -21,7 +21,7 @@ const filmsData : FilmsData = [
   {
     title: 'Щедрик',
     titleForDomain: 'shedryk',
-    timeArr: ['11:45'],
+    timeArr: ['11:45', "17:45", "20:45"],
     img: '/images/HomeSchedule/Shedryk.png',
     releasedOn: '15.02.2023',
     countryFrom: 'США',
@@ -63,7 +63,7 @@ const filmsData : FilmsData = [
   {
     title: 'Різдвяні канікули',
     titleForDomain: 'rizdviyani-kanikuly',
-    timeArr: ['14:45', '17:30'],
+    timeArr: ['14:45', '17:30', "20:45"],
     img: '/images/HomeSchedule/Kanikuly.png',
     releasedOn: '15.02.2023',
     countryFrom: 'США',
@@ -77,7 +77,7 @@ const filmsData : FilmsData = [
   {
     title: 'Операція ”Фортуна”',
     titleForDomain: 'operaciya-fortuna',
-    timeArr: ['11:50', '19:30'],
+    timeArr: ['11:50', '19:30', "20:45"],
     img: '/images/HomeSchedule/Fortuna.png',
     releasedOn: '15.02.2023',
     countryFrom: 'США',
@@ -105,7 +105,7 @@ const filmsData : FilmsData = [
   {
     title: 'Вавилон',
     titleForDomain: 'vavylon',
-    timeArr: ['18:45', '21:30'],
+    timeArr: ['18:45', '21:30', "20:45"],
     img: '/images/HomeSchedule/Vavylon.png',
     releasedOn: '15.02.2023',
     countryFrom: 'США',
@@ -125,7 +125,7 @@ const filmsData : FilmsData = [
     genre: ['фантастика', 'бойовик', 'пригоди', 'фентезі'],
     actors: ['Сем Вортінґтон', 'Зої Салдана', 'Кейт Вінслет', 'Мішель Єо', 'Сіґурні Вівер', 'Джованні Рібізі'],
     description: 'Історія розгортається більше ніж через десятиліття після подій першого фільму. Стрічка розповідає про сім’ю Саллі (Джейка, Нейтірі та їхніх дітей), проблеми, які їх переслідують, шлях, який вони долають, щоб захистити одне одного від небезпек, битви, які вони ведуть, щоб залишитися живими, і трагедії, які вони переживають разом.',
-    timeArr: ['21:40'],
+    timeArr: ["11:45", '21:40', "17:45"],
     img: '/images/HomeSchedule/Otto.png',
     id: 8,
     forKids: false

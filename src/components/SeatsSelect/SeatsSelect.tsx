@@ -27,6 +27,7 @@ export const selectedSeat = (row: number, seat: number, i: number) => {
 };
 
 const SeatsSelect = ({ id, time }: Props) => {
+  console.log(id, time)
   const windowSize = useAppSelector((state) => state.windowSize);
   const selectedSeats = useAppSelector((state) => state.addSelectedSeats);
 
