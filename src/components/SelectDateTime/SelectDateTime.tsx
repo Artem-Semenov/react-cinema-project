@@ -39,7 +39,6 @@ const SelectDateTime = ({ timeArr, setTimeFunc }: Props) => {
     e.currentTarget.style.order = "-1";
     e.currentTarget.style.borderBottom = "1px solid white";
 
-    setTime(e.currentTarget.textContent!);
     setTimeFunc(e.currentTarget.textContent!);
   };
 
