@@ -7,11 +7,10 @@ type Props = {
   setTimeFunc: Function
 };
 
-const { wrapper, date, timeStyle, dateDisplay, dateDisplayWrapper, svg } =
+const { wrapper, date, dateDisplay, dateDisplayWrapper, svg } =
   styles;
 
 const SelectDateTime = ({ timeArr, setTimeFunc }: Props) => {
-  const [time, setTime] = useState(timeArr[0]);
 
   const onClickDateHandler: MouseEventHandler<HTMLDivElement> = (event) => {
     const target = event.currentTarget;
