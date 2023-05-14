@@ -3,6 +3,17 @@ import { classToggle } from "utils/helpers/classtoggle";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
+  const handleBurgerClick = () => {
+    classToggle("body", "lock")
+    classToggle("burger-body", "show");
+    classToggle("burger-button", "show");
+  }
+
+  const closeBurgerOnLinkiClick = () => {
+    if (document.getElementById("body")?.classList.contains("lock")) {
+      handleBurgerClick()
+    }
+  }
   return (
     <div className="header">
       
@@ -11,10 +22,7 @@ const Header = () => {
         </h1>
         <div className="header__wrapper schedule__header-wrapper">
           <div
-            onClick={() => {
-              classToggle("burger-body", "show");
-              classToggle("burger-button", "show");
-            }}
+            onClick={handleBurgerClick}
             className="burger-menu__button"
             id="burger-button">
             <span></span>
@@ -25,26 +33,26 @@ const Header = () => {
           <nav>
             <ul className="header__body">
               <li>
-                <NavLink to={"/schedule"}>
+                <NavLink to={"/schedule"} onClick={closeBurgerOnLinkiClick}>
                   Розклад
                 </NavLink>
               </li>
               <div className="burger-menu__body" id="burger-body">
                 <li>
-                  <NavLink to={"/for-kids"}>Дітям</NavLink>
+                  <NavLink to={"/for-kids"} onClick={closeBurgerOnLinkiClick}>Дітям</NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/3d"}>3D Панорама</NavLink>
+                  <NavLink to={"/3d"} onClick={closeBurgerOnLinkiClick}>3D Панорама</NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/game-center"}>Ігротека</NavLink>
+                  <NavLink to={"/game-center"} onClick={closeBurgerOnLinkiClick}>Ігротека</NavLink>
                 </li>
                 <li>
-                  <NavLink to={"/burger-city"}>Burger CIty</NavLink>
+                  <NavLink to={"/burger-city"} onClick={closeBurgerOnLinkiClick}>Burger CIty</NavLink>
                 </li>
               </div>
               <li>
-                <NavLink to={"/contacts"}>Контакти</NavLink>
+                <NavLink to={"/contacts"} onClick={closeBurgerOnLinkiClick}>Контакти</NavLink>
               </li>
             </ul>
           </nav>
