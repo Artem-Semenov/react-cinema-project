@@ -1,0 +1,113 @@
+.form__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba($color: #000000, $alpha: 0.6);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form__content {
+  margin: 0 12px;
+  border: 2px solid rgba(189, 0, 255, 0.4);
+  background-color: rgba($color: #000000, $alpha: 0.8);
+  border-radius: 25px;
+  padding: 20px;
+  color: white;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 20px;
+}
+.form__wrapper_title {
+  text-align: center;
+}
+
+.seatsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.form__field {
+  width: 100%;
+  input {
+    background: gray;
+    border: 1px solid rgba(189, 0, 255, 0.4);
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 17px;
+    &.error {
+      border: 1px solid red;
+    }
+  }
+  label {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+}
+.form__payment_type {
+display: flex;
+gap: 5px;
+.form__payment_type_item {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  label {
+    margin-bottom: 0;
+  }
+}
+}
+.form__radio-btn {
+ display: none;
+  ~.styled_radio {
+    height: 17px;
+    width: 17px;
+    border: 1px solid #fff;
+    position: relative;
+    padding: 2px;
+    &:after {
+content: "";
+position: absolute;
+display: block;
+width: calc(100% - 4px);
+height: calc(100% - 4px);
+
+    }
+    
+  }
+  &:checked {
+    ~.styled_radio {
+    &:after {
+      background: #0500FF;
+    }
+  }
+  }
+}
+.form__submit-btn {
+  
+}
+.date {
+}
+.form__name {
+}
+
+.seatsWrapper__li_item {
+}

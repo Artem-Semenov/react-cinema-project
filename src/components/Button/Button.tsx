@@ -4,8 +4,9 @@ type Props = {
   title: string;
   clickHandler?: () => void
   trailerLink?: string;
+  type?: "button" | "submit" | "reset" | undefined
 };
-const Button = ({ trailerLink, clickHandler, title }: Props) => {
+const Button = ({ trailerLink, clickHandler, title, type }: Props) => {
   return (
     <>
       {trailerLink ? (
@@ -13,7 +14,7 @@ const Button = ({ trailerLink, clickHandler, title }: Props) => {
           {title}
         </a>
       ) : (
-        <button className="clickable-button" onClick={clickHandler}>
+        <button type={type} className="clickable-button" onClick={clickHandler}>
           {title}
         </button>
       )}

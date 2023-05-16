@@ -7,12 +7,9 @@ import { addSelectedSeats } from "redux/selectedSeats";
 type Props = {
   id: number;
   time: string;
+  bookingClickHandler: () => void
 };
 
-/* type SelectedSeats = {
-  ["row"]: number;
-  ["seat"]: number;
-}[]; */
 
 export const selectedSeat = (row: number, seat: number, i: number) => {
   return (
@@ -26,19 +23,16 @@ export const selectedSeat = (row: number, seat: number, i: number) => {
   );
 };
 
-const SeatsSelect = ({ id, time }: Props) => {
+const SeatsSelect = ({ id, time, bookingClickHandler }: Props) => {
   console.log(id, time)
   const windowSize = useAppSelector((state) => state.windowSize);
   const selectedSeats = useAppSelector((state) => state.addSelectedSeats);
 
   const dispatch = useAppDispatch();
-  // const [selectedSeats, setSelectedSeats] = useState<SelectedSeats>([]);
 
   const handleSeatSelect = (row: number, seat: number) => {
     dispatch(addSelectedSeats({ row, seat }));
   };
-
-  console.log(selectedSeats);
 
   const buttonBlock = (openSeatSelectState = false) => {
     return (
@@ -47,7 +41,7 @@ const SeatsSelect = ({ id, time }: Props) => {
           className={`film__content_buttons-wrapper mb-0 ${
             openSeatSelectState ? "film__content_buttons-wrapper_longed" : ""
           }`}>
-          <Button title="Забронювати" />
+          <Button title="Забронювати" clickHandler={bookingClickHandler} />
           <Button title="Оплатити квитки" trailerLink="link" />
         </div>
          <p className={`film__content_buttons_desc ${

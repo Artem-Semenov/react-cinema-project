@@ -11,6 +11,7 @@ import SvgIcon from "components/Sprite/Sprite";
 import FilmsSlider from "components/FilmsSlider/FilmsSlider";
 import { addSelectedSeats } from "redux/selectedSeats";
 import SelectDateTime from "components/SelectDateTime/SelectDateTime";
+import Form from "components/Form/Form";
 
 type Props = {};
 
@@ -22,6 +23,9 @@ const FilmPage = (props: Props) => {
   const { time, id } = location.state;
   const { pathname } = location;
   const [openSeatsSelect, setOpenSeatsSelect] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [formSuccess, setFormSuccess] = useState(false);
+  const selectedSeats = useAppSelector((state) => state.addSelectedSeats);
 
   useEffect(() => {
     dispatch(addSelectedSeats([]));
@@ -101,7 +105,17 @@ const FilmPage = (props: Props) => {
     </div>
   );
 
-  const selectedSeats = useAppSelector((state) => state.addSelectedSeats);
+  const formSuccessCallback = () => {
+    console.log(`formSuccessCallback`)
+    
+    // setFormSuccess(true);
+  };
+
+  const bookingClickHandler = () => {
+    console.log(`bookingClick`);
+    setShowForm((prev) => !prev);
+    console.log(showForm);
+  };
 
   return (
     <>
@@ -124,7 +138,11 @@ const FilmPage = (props: Props) => {
           )}
           {openSeatsSelect && windowWidth < 768 && shortFilmDesc()}
           {openSeatsSelect && windowWidth < 768 && (
-            <SeatsSelect id={id} time={time === -1 ? timeArr[0] : time} />
+            <SeatsSelect
+              id={id}
+              time={time === -1 ? timeArr[0] : time}
+              bookingClickHandler={bookingClickHandler}
+            />
           )}
           <div className="film__content">
             {!openSeatsSelect && windowWidth < 768 && (
@@ -164,6 +182,7 @@ const FilmPage = (props: Props) => {
                   time={
                     timeArr.includes(selectedTime) ? selectedTime : timeArr[0]
                   }
+                  bookingClickHandler={bookingClickHandler}
                 />
               )}
               {windowWidth < 768 && !openSeatsSelect && timeAndButtonsBlock()}
@@ -214,7 +233,11 @@ const FilmPage = (props: Props) => {
             </div>
           )}
           {openSeatsSelect && windowWidth > 767 && windowWidth < 1024 && (
-            <SeatsSelect id={id} time={time === -1 ? timeArr[0] : time} />
+            <SeatsSelect
+              id={id}
+              time={time === -1 ? timeArr[0] : time}
+              bookingClickHandler={bookingClickHandler}
+            />
           )}
           {!openSeatsSelect && (
             <div className="film__content_text-mobile">
@@ -238,6 +261,13 @@ const FilmPage = (props: Props) => {
           </div>
         </div>
       </Container>
+      {showForm && (
+        <Form
+          callback={formSuccessCallback}
+          filmName={title}
+          filmDate={`24.01T11:45`}
+        />
+      )}
     </>
   );
 };
