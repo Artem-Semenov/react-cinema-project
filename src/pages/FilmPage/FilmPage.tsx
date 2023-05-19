@@ -12,6 +12,7 @@ import FilmsSlider from "components/FilmsSlider/FilmsSlider";
 import { addSelectedSeats } from "redux/selectedSeats";
 import SelectDateTime from "components/SelectDateTime/SelectDateTime";
 import Form from "components/Form/Form";
+import { classToggle } from "utils/helpers/classtoggle";
 
 type Props = {};
 
@@ -24,7 +25,6 @@ const FilmPage = (props: Props) => {
   const { pathname } = location;
   const [openSeatsSelect, setOpenSeatsSelect] = useState(false);
   const [showForm, setShowForm] = useState(false);
-  const [formSuccess, setFormSuccess] = useState(false);
   const selectedSeats = useAppSelector((state) => state.addSelectedSeats);
 
   useEffect(() => {
@@ -51,7 +51,6 @@ const FilmPage = (props: Props) => {
   console.log(selectedTime);
 
   const timeClickHandle = () => {
-    console.log(id);
     setOpenSeatsSelect(true);
   };
 
@@ -105,17 +104,15 @@ const FilmPage = (props: Props) => {
     </div>
   );
 
-  const formSuccessCallback = () => {
-    console.log(`formSuccessCallback`)
-    
-    // setFormSuccess(true);
+  const bookingClickHandler = () => {
+    setShowForm(true);
   };
 
-  const bookingClickHandler = () => {
-    console.log(`bookingClick`);
-    setShowForm((prev) => !prev);
-    console.log(showForm);
-  };
+  if (showForm) {
+    document.getElementById("body")?.classList.toggle("lock", true);
+  } else {
+    document.getElementById("body")?.classList.toggle("lock", false);
+  }
 
   return (
     <>
@@ -263,7 +260,7 @@ const FilmPage = (props: Props) => {
       </Container>
       {showForm && (
         <Form
-          callback={formSuccessCallback}
+          callback={() => setShowForm(false)}
           filmName={title}
           filmDate={`24.01T11:45`}
         />
