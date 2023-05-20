@@ -1,13 +1,13 @@
 import { useAppSelector } from "redux/hooks";
 import "./Form.scss";
 import Button from "components/Button/Button";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type Props = {
   callback: () => void;
   filmName: string;
   filmDate: string;
-  animationName?: string
+  animationName?: string;
 };
 
 const Form = ({ callback, filmName, filmDate, animationName }: Props) => {
@@ -62,12 +62,10 @@ const Form = ({ callback, filmName, filmDate, animationName }: Props) => {
       radio2.current?.classList.remove("error");
     }
 
-    
-
     setSuccess(true);
   };
 
-  const closeFormOnClickOutside = (e: Event) => {   
+  const closeFormOnClickOutside = useCallback((e: Event) => {
     const target = e.target as HTMLElement;
 
     if (!target) return;
@@ -76,8 +74,8 @@ const Form = ({ callback, filmName, filmDate, animationName }: Props) => {
       console.log("callback");
       callback();
     }
-  };
-  
+  }, []);
+
   useEffect(() => {
     document.addEventListener("click", closeFormOnClickOutside);
     return () => {
@@ -87,7 +85,9 @@ const Form = ({ callback, filmName, filmDate, animationName }: Props) => {
 
   return (
     <div className="form__wrapper">
-      <div className="form__content" style={{animationName: animationName ?? ''}}>
+      <div
+        className="form__content"
+        style={{ animationName: animationName ?? "" }}>
         {!success && (
           <div className="form__content_inner">
             <h3 className="form__wrapper_title">
