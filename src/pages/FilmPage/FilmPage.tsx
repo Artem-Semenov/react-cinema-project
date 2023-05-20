@@ -5,7 +5,7 @@ import "./FilmPage.scss";
 import ScheduleTimeItem from "components/Schedule/ScheduleListItem/ScheduleTimeItem/ScheduleTimeItem";
 import Button from "components/Button/Button";
 import { useAppDispatch, useAppSelector } from "redux/hooks";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import SeatsSelect, { selectedSeat } from "components/SeatsSelect/SeatsSelect";
 import SvgIcon from "components/Sprite/Sprite";
 import FilmsSlider from "components/FilmsSlider/FilmsSlider";
@@ -134,13 +134,17 @@ const FilmPage = (props: Props) => {
     }, 300);
   };
 
-  const bookingClickHandler = () => {
-    if (selectedSeats.length === 0) return alert("Choose at least one seat!");
-    setAppear(!appear);
-
-    appear && setAppearForm();
-    !appear && setDisappearForm();
-  };
+  const bookingClickHandler = useCallback(
+    () => {
+      if (selectedSeats.length === 0) return alert("Choose at least one seat!");
+      setAppear(!appear);
+  
+      appear && setAppearForm();
+      !appear && setDisappearForm();
+    },
+    []
+  )
+   
 
   if (showForm) {
     document.getElementById("body")?.classList.toggle("lock", true);

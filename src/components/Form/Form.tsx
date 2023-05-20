@@ -74,7 +74,7 @@ const Form = ({ callback, filmName, filmDate, animationName }: Props) => {
       console.log("callback");
       callback();
     }
-  }, []);
+  }, [callback]);
 
   useEffect(() => {
     document.addEventListener("click", closeFormOnClickOutside);
