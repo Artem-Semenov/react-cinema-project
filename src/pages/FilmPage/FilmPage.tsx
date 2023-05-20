@@ -134,17 +134,13 @@ const FilmPage = (props: Props) => {
     }, 300);
   };
 
-  const bookingClickHandler = useCallback(
-    () => {
-      if (selectedSeats.length === 0) return alert("Choose at least one seat!");
-      setAppear(!appear);
-  
-      appear && setAppearForm();
-      !appear && setDisappearForm();
-    },
-    []
-  )
-   
+  const bookingClickHandler = useCallback(() => {
+    if (selectedSeats.length === 0) return alert("Choose at least one seat!");
+    setAppear(!appear);
+
+    appear && setAppearForm();
+    !appear && setDisappearForm();
+  }, [appear, selectedSeats.length]);
 
   if (showForm) {
     document.getElementById("body")?.classList.toggle("lock", true);
