@@ -21,7 +21,32 @@
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
+  animation-name: appear;
+  animation-duration: .4s;
+  animation-fill-mode: forwards;
 }
+@keyframes appear {
+  0%{
+    opacity: 0.2;
+    transform: translate(0, -100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes disappear {
+  0%{
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, -100%);
+  }
+}
+
 .form__content_inner {
   display: flex;
   flex-direction: column;
@@ -35,6 +60,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  padding: 2px 0;
   max-height: 150px;
   overflow: auto;
   ul {

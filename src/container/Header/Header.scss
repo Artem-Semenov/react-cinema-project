@@ -1,5 +1,6 @@
 .header {
   width: 100%;
+  overflow: hidden;
 }
 
 .header__wrapper {
@@ -18,12 +19,13 @@
 
   .burger-menu__button,
   .tel {
-    margin-top: -10px;
+    margin-top: -5px;
   }
 }
 
 .schedule__header-wrapper {
-  padding: 16px 12px;
+  margin: 0 -16px;
+  padding: 16px 28px;
 }
 
 .header__body {

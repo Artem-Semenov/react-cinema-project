@@ -7,9 +7,10 @@ type Props = {
   callback: () => void;
   filmName: string;
   filmDate: string;
+  animationName?: string
 };
 
-const Form = ({ callback, filmName, filmDate }: Props) => {
+const Form = ({ callback, filmName, filmDate, animationName }: Props) => {
   const selectedSeats = useAppSelector((state) => state.addSelectedSeats);
 
   const [success, setSuccess] = useState(false);
@@ -45,6 +46,13 @@ const Form = ({ callback, filmName, filmDate }: Props) => {
       surname.current?.classList.remove("error");
     }
 
+    if (!/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/.test(emailValue)) {
+      email.current?.classList.toggle("error", true);
+      return;
+    } else {
+      email.current?.classList.remove("error");
+    }
+
     if (!radio1.current?.checked && !radio2.current?.checked) {
       radio1.current?.classList.toggle("error", true);
       radio2.current?.classList.toggle("error", true);
@@ -54,12 +62,7 @@ const Form = ({ callback, filmName, filmDate }: Props) => {
       radio2.current?.classList.remove("error");
     }
 
-    if (!/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/.test(emailValue)) {
-      email.current?.classList.toggle("error", true);
-      return;
-    } else {
-      email.current?.classList.remove("error");
-    }
+    
 
     setSuccess(true);
   };
@@ -84,7 +87,7 @@ const Form = ({ callback, filmName, filmDate }: Props) => {
 
   return (
     <div className="form__wrapper">
-      <div className="form__content">
+      <div className="form__content" style={{animationName: animationName ?? ''}}>
         {!success && (
           <div className="form__content_inner">
             <h3 className="form__wrapper_title">

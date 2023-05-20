@@ -50,14 +50,16 @@ background: linear-gradient(0deg, rgba(5, 0, 255, 0.4), rgba(5, 0, 255, 0.4)), #
 
 }
 .seatsSelect__row-index {
-min-width: 9px;
+min-width: 30px;
 }
 .seatsSelect__row-index-left {
   margin-right: auto;
+  text-align: left;
 
 }
 .seatsSelect__row-index-right {
 margin-left: auto;
+text-align: right;
 }
 .selected_seats__wrapper .selected_seats__block:last-child {
   margin-bottom: 24px;

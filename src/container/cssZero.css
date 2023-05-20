@@ -34,5 +34,5 @@ body {
 	background: #383838;
 }
 #body.lock {
-	overflow: hidden;
+	overflow: auto hidden;
 }

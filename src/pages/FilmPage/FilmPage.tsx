@@ -21,7 +21,14 @@ const FilmPage = (props: Props) => {
   const location = useLocation();
   const dispatch = useAppDispatch();
 
-  const { time, id } = location.state;
+  let time: string | null = null,
+    idFromClick: number | null = null;
+
+  if (location.state) {
+    time = location.state.time;
+    idFromClick = location.state.id;
+  }
+
   const { pathname } = location;
   const [openSeatsSelect, setOpenSeatsSelect] = useState(false);
   const [showForm, setShowForm] = useState(false);
@@ -32,7 +39,15 @@ const FilmPage = (props: Props) => {
     setOpenSeatsSelect(false);
   }, [dispatch, pathname]);
 
-  const film: Film = filmsData.find((el) => el.id === id)!;
+  let film: Film;
+  if (idFromClick) {
+    film = filmsData.find((el) => el.id === idFromClick)!;
+  } else {
+    film = filmsData.find((el) => {
+      let pathArr = pathname.split("/");
+      return el.titleForDomain === pathArr[pathArr.length - 1];
+    })!;
+  }
 
   const {
     countryFrom,
@@ -44,6 +59,7 @@ const FilmPage = (props: Props) => {
     timeArr,
     title,
     actors,
+    id,
   } = film;
 
   const [selectedTime, setSelectedTime] = useState(timeArr[0]);
@@ -104,8 +120,27 @@ const FilmPage = (props: Props) => {
     </div>
   );
 
-  const bookingClickHandler = () => {
+  const [appear, setAppear] = useState(true);
+  const [appearStyle, setAppearStyle] = useState<string>("appear");
+
+  const setAppearForm = () => {
     setShowForm(true);
+    setAppearStyle("appear");
+  };
+
+  const setDisappearForm = () => {
+    setAppearStyle("disappear");
+    setTimeout(() => {
+      setShowForm(false);
+    }, 300);
+  };
+
+  const bookingClickHandler = () => {
+    if (selectedSeats.length === 0) return alert("Choose at least one seat!");
+    setAppear(!appear);
+
+    appear && setAppearForm();
+    !appear && setDisappearForm();
   };
 
   if (showForm) {
@@ -137,7 +172,7 @@ const FilmPage = (props: Props) => {
           {openSeatsSelect && windowWidth < 768 && (
             <SeatsSelect
               id={id}
-              time={time === -1 ? timeArr[0] : time}
+              time={time === null ? timeArr[0] : time}
               bookingClickHandler={bookingClickHandler}
             />
           )}
@@ -232,7 +267,7 @@ const FilmPage = (props: Props) => {
           {openSeatsSelect && windowWidth > 767 && windowWidth < 1024 && (
             <SeatsSelect
               id={id}
-              time={time === -1 ? timeArr[0] : time}
+              time={time === null ? timeArr[0] : time}
               bookingClickHandler={bookingClickHandler}
             />
           )}
@@ -260,9 +295,10 @@ const FilmPage = (props: Props) => {
       </Container>
       {showForm && (
         <Form
-          callback={() => setShowForm(false)}
+          callback={bookingClickHandler}
           filmName={title}
           filmDate={`24.01T11:45`}
+          animationName={appearStyle}
         />
       )}
     </>

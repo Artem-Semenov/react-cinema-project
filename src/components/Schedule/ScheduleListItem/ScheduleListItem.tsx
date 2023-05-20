@@ -19,7 +19,7 @@ const ScheduleListItem = ({
   return (
     <li className="schedule-list__item__wrapper" key={id}>
       <div className="schedule-list__item_content">
-        <NavLink to={`/schedule/${titleForDomain}`} state={{ time: -1, id }}>
+        <NavLink to={`/schedule/${titleForDomain}`} state={{ time: null, id }}>
           <div className="img">
             <div className="background"></div>
             <div className="buy-icon-wrapper">
