@@ -12,7 +12,6 @@ import FilmsSlider from "components/FilmsSlider/FilmsSlider";
 import { addSelectedSeats } from "redux/selectedSeats";
 import SelectDateTime from "components/SelectDateTime/SelectDateTime";
 import Form from "components/Form/Form";
-import { classToggle } from "utils/helpers/classtoggle";
 
 type Props = {};
 

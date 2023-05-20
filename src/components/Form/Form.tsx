@@ -83,7 +83,7 @@ const Form = ({ callback, filmName, filmDate, animationName }: Props) => {
     return () => {
       document.removeEventListener("click", closeFormOnClickOutside);
     };
-  }, []);
+  }, [closeFormOnClickOutside]);
 
   return (
     <div className="form__wrapper">
