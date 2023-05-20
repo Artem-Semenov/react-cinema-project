@@ -36,3 +36,8 @@ body {
 #body.lock {
 	overflow: auto hidden;
 }
+@media (min-width: 1024px) {
+	#body.lock {
+		padding-right: 16px;
+	}
+}
